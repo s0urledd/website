@@ -30,13 +30,13 @@ export function Header() {
           <nav className="hidden lg:flex items-center gap-10">
             <Link
               href="#networks"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-semibold text-foreground/90 hover:text-accent transition-colors"
             >
               Networks
             </Link>
             <Link
               href="#products"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-semibold text-foreground/90 hover:text-accent transition-colors"
             >
               Products
             </Link>
@@ -44,19 +44,19 @@ export function Header() {
               href="https://blog.huginn.tech"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-semibold text-foreground/90 hover:text-accent transition-colors"
             >
               Blog
             </a>
             <Link
               href="#events"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-semibold text-foreground/90 hover:text-accent transition-colors"
             >
               Events
             </Link>
             <Link
               href="#contact"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-semibold text-foreground/90 hover:text-accent transition-colors"
             >
               Contact
             </Link>
@@ -87,13 +87,13 @@ export function Header() {
           <nav className="container mx-auto px-6 py-6 flex flex-col gap-1">
             <Link
               href="#networks"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-3"
+              className="text-sm font-semibold text-foreground/90 hover:text-accent transition-colors py-3"
             >
               Networks
             </Link>
             <Link
               href="#products"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-3"
+              className="text-sm font-semibold text-foreground/90 hover:text-accent transition-colors py-3"
             >
               Products
             </Link>
@@ -101,19 +101,19 @@ export function Header() {
               href="https://blog.huginn.tech"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-3"
+              className="text-sm font-semibold text-foreground/90 hover:text-accent transition-colors py-3"
             >
               Blog
             </a>
             <Link
               href="#events"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-3"
+              className="text-sm font-semibold text-foreground/90 hover:text-accent transition-colors py-3"
             >
               Events
             </Link>
             <Link
               href="#contact"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-3"
+              className="text-sm font-semibold text-foreground/90 hover:text-accent transition-colors py-3"
             >
               Contact
             </Link>
