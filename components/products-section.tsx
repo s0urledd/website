@@ -111,7 +111,7 @@ export function ProductsSection() {
               </ul>
 
               <Button variant="outline" className="w-full group bg-transparent" asChild>
-                <a href={product.link} target="_blank" rel="noopener noreferrer">
+                <a href={product.link} target="_blank" rel="noopener noreferrer" aria-label={`Learn more about ${product.name}`}>
                   Learn More
                   <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>

@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
@@ -34,16 +35,20 @@ export function Hero() {
             <Button
               size="lg"
               className="w-full sm:w-auto px-8 h-14 text-base font-medium rounded-xl bg-gradient-to-r from-accent via-accent to-accent/90 hover:from-accent hover:via-accent/95 hover:to-accent/80 shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/40 transition-all duration-300 hover:scale-[1.02] border border-accent/20"
+              asChild
             >
-              Stake with Us
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <Link href="#networks">
+                Stake with Us
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="w-full sm:w-auto px-8 h-14 text-base font-medium rounded-xl bg-white/5 backdrop-blur-sm border-white/20 hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
+              asChild
             >
-              Get in Touch
+              <Link href="#contact">Get in Touch</Link>
             </Button>
           </div>
         </div>
