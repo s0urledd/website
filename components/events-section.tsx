@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Card } from "@/components/ui/card"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useState, useEffect } from "react"
@@ -10,7 +11,7 @@ export function EventsSection() {
   const events = [
     {
       title: "FlixFest 2023",
-      images: ["/images/flixfest-20023.jpg", "/images/flixfest-202023-201.jpg"],
+      images: ["/images/flixfest-202023.jpg", "/images/flixfest-202023-201.jpg"],
       description: "FLIX FEST Istanbul organized by Huginn.Tech in partnership with Inter Protocol",
       date: "2023",
       network: "FlixDotFun",
@@ -146,10 +147,13 @@ function EventCard({
     <div className="min-w-full">
       <Card className="border-border overflow-hidden bg-card/50 backdrop-blur-sm">
         <div className="aspect-video relative overflow-hidden">
-          <img
+          <Image
             src={event.images[currentImageIndex] || "/placeholder.svg"}
             alt={`${event.title} - Image ${currentImageIndex + 1}`}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
+            priority={currentImageIndex === 0}
           />
         </div>
         <div className="p-8">
@@ -166,6 +170,7 @@ function EventCard({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-blue-500 hover:underline"
+                aria-label={`View ${event.title} event details${event.lumaLink2 ? " (July)" : ""}`}
               >
                 {event.lumaLink2 ? "View Event (July)" : "View Event"}
               </a>
@@ -176,6 +181,7 @@ function EventCard({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-blue-500 hover:underline"
+                aria-label={`View ${event.title} event details (August)`}
               >
                 View Event (August)
               </a>
@@ -186,6 +192,7 @@ function EventCard({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-blue-500 hover:underline"
+                aria-label={`Watch ${event.title} video on YouTube`}
               >
                 Watch Video
               </a>

@@ -20,6 +20,7 @@ export function Header() {
               width={40}
               height={40}
               className="transition-transform group-hover:scale-105"
+              priority
             />
             <div className="text-2xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
               Huginn
@@ -69,14 +70,20 @@ export function Header() {
             </Link>
           </div>
 
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-2" aria-label="Toggle menu">
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2"
+            aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
+          >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-border bg-background">
+        <div id="mobile-menu" className="lg:hidden border-t border-border bg-background">
           <nav className="container mx-auto px-6 py-6 flex flex-col gap-1">
             <Link
               href="#networks"
