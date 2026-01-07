@@ -136,6 +136,17 @@ export function NetworksSection() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-light">
             Stake with confidence across our professionally validated blockchain networks
           </p>
+          <div className="flex items-center justify-center gap-6 mt-6 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <span className="text-white font-semibold">15+</span>
+              <span>Chains</span>
+            </div>
+            <div className="w-px h-4 bg-white/20" />
+            <div className="flex items-center gap-2">
+              <span className="text-white font-semibold">$20.4M</span>
+              <span>TVL</span>
+            </div>
+          </div>
         </div>
 
         <div className="flex items-center justify-center gap-3 mb-16">
