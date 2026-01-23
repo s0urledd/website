@@ -107,6 +107,14 @@ const networks = [
     stakeUrl: "https://polkadot.subscan.io/validator/12bUkY5nrGyoXqBpxKDf88z5VQWzaUK83PCgyHtJ1UN1ujjU",
   },
   {
+    name: "Axone",
+    chain: "Mainnet",
+    apr: "10.00",
+    logo: "/logos/axone.png",
+    accentColor: "rgba(59, 130, 246, 0.15)",
+    stakeUrl: "https://explore.axone.xyz/AXONE-MAINNET/staking/axonevaloper1jn9ycc8898lmhl749ng2q58fnum82pj4hd6unf",
+  },
+  {
     name: "Cosmos Hub",
     chain: "Testnet",
     apr: "0",
