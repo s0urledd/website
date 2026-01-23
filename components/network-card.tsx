@@ -41,10 +41,10 @@ export function NetworkCard({ name, chain, apr, logo, stakeUrl }: NetworkCardPro
         </div>
 
         <div className="mb-6">
-          <div className="text-2xl font-bold text-foreground mb-1 group-hover:text-accent transition-colors">
+          <div className="text-lg font-bold text-foreground mb-1 group-hover:text-accent transition-colors">
             {apr === "0" ? "—" : `${apr}%`}
           </div>
-          <p className="text-xs text-muted-foreground uppercase tracking-wider">APR</p>
+          <p className="text-[10px] text-muted-foreground uppercase tracking-wider">APR</p>
         </div>
 
         {stakeUrl ? (

@@ -40,11 +40,12 @@ const networks = [
       "https://wallet.keplr.app/chains/dymension?modal=staking&chain=dymension_1100-1&validator_address=dymvaloper1thw8t8skc07sj5fyh9ggw4qachft6h8p9h4qwv&step_id=2",
   },
   {
-    name: "Elys",
+    name: "Polkadot",
     chain: "Mainnet",
-    apr: "0",
-    logo: "/logos/elys.png",
-    accentColor: "rgba(132, 204, 22, 0.15)",
+    apr: "11.78",
+    logo: "/logos/polkadot.png",
+    accentColor: "rgba(230, 0, 122, 0.15)",
+    stakeUrl: "https://polkadot.subscan.io/validator/12bUkY5nrGyoXqBpxKDf88z5VQWzaUK83PCgyHtJ1UN1ujjU",
   },
   {
     name: "Humans",
@@ -99,12 +100,11 @@ const networks = [
       "https://www.stakingrewards.com/stake-app?input=bitcoin&type=babylon-staking&provider=huginn&locked=true&best-deal=false",
   },
   {
-    name: "Polkadot",
+    name: "Elys",
     chain: "Mainnet",
-    apr: "11.78",
-    logo: "/logos/polkadot.png",
-    accentColor: "rgba(230, 0, 122, 0.15)",
-    stakeUrl: "https://polkadot.subscan.io/validator/12bUkY5nrGyoXqBpxKDf88z5VQWzaUK83PCgyHtJ1UN1ujjU",
+    apr: "0",
+    logo: "/logos/elys.png",
+    accentColor: "rgba(132, 204, 22, 0.15)",
   },
   {
     name: "Axone",
