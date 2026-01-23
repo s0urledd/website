@@ -65,7 +65,7 @@ const networks = [
   {
     name: "FlixDotFun",
     chain: "Mainnet",
-    apr: "0",
+    apr: "5.00",
     logo: "/logos/omniflix.png",
     accentColor: "rgba(191, 90, 242, 0.15)",
     stakeUrl:
@@ -92,11 +92,19 @@ const networks = [
   {
     name: "Babylon",
     chain: "Mainnet",
-    apr: "0",
+    apr: "3.00",
     logo: "/logos/babylon.png",
     accentColor: "rgba(255, 107, 0, 0.15)",
     stakeUrl:
       "https://www.stakingrewards.com/stake-app?input=bitcoin&type=babylon-staking&provider=huginn&locked=true&best-deal=false",
+  },
+  {
+    name: "Polkadot",
+    chain: "Mainnet",
+    apr: "11.78",
+    logo: "/logos/polkadot.png",
+    accentColor: "rgba(230, 0, 122, 0.15)",
+    stakeUrl: "https://polkadot.subscan.io/validator/12bUkY5nrGyoXqBpxKDf88z5VQWzaUK83PCgyHtJ1UN1ujjU",
   },
   {
     name: "Cosmos Hub",
