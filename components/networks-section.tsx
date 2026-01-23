@@ -43,7 +43,7 @@ const networks = [
     name: "Polkadot",
     chain: "Mainnet",
     apr: "11.78",
-    logo: "/logos/polkadot.svg",
+    logo: "/logos/polkadot.png",
     accentColor: "rgba(230, 0, 122, 0.15)",
     stakeUrl: "https://polkadot.subscan.io/validator/12bUkY5nrGyoXqBpxKDf88z5VQWzaUK83PCgyHtJ1UN1ujjU",
   },
