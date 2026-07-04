@@ -7,13 +7,28 @@ import { EventsSection } from "@/components/events-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 
-export default function Page() {
+async function getMonadApr(): Promise<string | null> {
+  try {
+    const res = await fetch("https://validator-api.huginn.tech/monad-api/staking/pool", {
+      next: { revalidate: 3600 },
+    })
+    if (!res.ok) return null
+    const data = await res.json()
+    return typeof data?.apr === "number" && data.apr > 0 ? data.apr.toFixed(2) : null
+  } catch {
+    return null
+  }
+}
+
+export default async function Page() {
+  const monadApr = await getMonadApr()
+
   return (
     <div className="min-h-screen">
       <Header />
       <main>
         <Hero />
-        <NetworksSection />
+        <NetworksSection monadApr={monadApr} />
         <AboutSection />
         <ProductsSection />
         <EventsSection />

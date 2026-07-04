@@ -7,7 +7,7 @@ const networks = [
   {
     name: "Monad",
     chain: "Mainnet",
-    apr: "14.38",
+    apr: "13.09",
     logo: "/logos/monad.png",
     accentColor: "rgba(147, 51, 234, 0.15)",
     stakeUrl: "https://monadvision.com/validator/0x67a3aEe77920Fa694B6FD7c7cf875493762A99f9",
@@ -84,6 +84,14 @@ const networks = [
       "https://www.stakingrewards.com/stake-app?input=bitcoin&type=babylon-staking&provider=huginn&locked=true&best-deal=false",
   },
   {
+    name: "Espresso",
+    chain: "Mainnet",
+    apr: "4.14",
+    logo: "/logos/espresso.jpg",
+    accentColor: "rgba(196, 132, 88, 0.15)",
+    stakeUrl: "https://stake.espresso.network/",
+  },
+  {
     name: "Elys",
     chain: "Mainnet",
     apr: "0",
@@ -116,10 +124,14 @@ const networks = [
 
 const categories = ["Mainnet", "Testnet"]
 
-export function NetworksSection() {
+export function NetworksSection({ monadApr }: { monadApr?: string | null }) {
   const [activeCategory, setActiveCategory] = useState("Mainnet")
 
-  const filteredNetworks = networks.filter((network) => network.chain === activeCategory)
+  const filteredNetworks = networks
+    .filter((network) => network.chain === activeCategory)
+    .map((network) =>
+      network.name === "Monad" && network.chain === "Mainnet" && monadApr ? { ...network, apr: monadApr } : network,
+    )
 
   return (
     <section id="networks" className="py-24 lg:py-32 relative">

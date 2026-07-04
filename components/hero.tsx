@@ -64,7 +64,7 @@ export function Hero() {
 
           <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg">
             <div>
-              <div className="text-2xl sm:text-3xl font-bold text-foreground">13</div>
+              <div className="text-2xl sm:text-3xl font-bold text-foreground">14</div>
               <div className="text-sm text-muted-foreground mt-1">Networks</div>
             </div>
             <div>
