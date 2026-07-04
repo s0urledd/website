@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero"
 import { NetworksSection } from "@/components/networks-section"
 import { AboutSection } from "@/components/about-section"
 import { ProductsSection } from "@/components/products-section"
+import { RelayerSection } from "@/components/relayer-section"
 import { EventsSection } from "@/components/events-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
@@ -31,6 +32,7 @@ export default async function Page() {
         <NetworksSection monadApr={monadApr} />
         <AboutSection />
         <ProductsSection />
+        <RelayerSection />
         <EventsSection />
         <ContactSection />
       </main>

@@ -125,3 +125,39 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes packet-flow {
+  0% {
+    left: 2%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    left: 96%;
+    opacity: 0;
+  }
+}
+
+.packet-dot {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--accent);
+  box-shadow: 0 0 8px 1px color-mix(in oklch, var(--accent) 70%, transparent);
+  animation: packet-flow 3.6s linear infinite;
+}
+
+.packet-dot-reverse {
+  animation-direction: reverse;
+  opacity: 0.7;
+  width: 4px;
+  height: 4px;
+}

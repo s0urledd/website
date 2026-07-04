@@ -82,6 +82,26 @@ export function Footer() {
                   Monadoring
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://validator-api.huginn.tech/monad-api"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Validator API
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://monad-status.huginn.tech/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Monad RPC & WSS
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -94,8 +114,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Services <span className="text-muted-foreground/60">(Soon)</span>
+                <Link href="#relayer" className="text-muted-foreground hover:text-foreground transition-colors">
+                  IBC Relayer
                 </Link>
               </li>
               <li>

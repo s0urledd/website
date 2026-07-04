@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown, Bot, ArrowRight } from "lucide-react"
+import { Menu, X, ChevronDown, Bot, ArrowRight, Code2, Server, RefreshCw } from "lucide-react"
 import { useState } from "react"
 
 const productGroups = [
@@ -22,16 +22,35 @@ const productGroups = [
         href: "https://github.com/Huginn-Tech/monadoring",
         icon: Bot,
       },
+      {
+        name: "Validator & Staking API",
+        description: "Monad validator, uptime & staking data",
+        href: "https://validator-api.huginn.tech/monad-api",
+        icon: Code2,
+      },
+      {
+        name: "Monad RPC & WSS",
+        description: "Free public endpoints with live status",
+        href: "https://monad-status.huginn.tech/",
+        icon: Server,
+      },
     ],
   },
   {
-    label: "Security",
+    label: "Security & Interchain",
     items: [
       {
         name: "Huginn Guard",
         description: "Security & alert bot on Telegram",
         href: "https://t.me/Huginn_GuardBot",
         iconImage: "/logos/huginnguard.png",
+      },
+      {
+        name: "IBC Relayer",
+        description: "Packet relaying for Cosmos SDK chains",
+        href: "#relayer",
+        icon: RefreshCw,
+        internal: true,
       },
     ],
   },
@@ -131,8 +150,9 @@ export function Header() {
                                 <a
                                   key={item.name}
                                   href={item.href}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
+                                  {...(item.internal
+                                    ? { onClick: () => setProductsOpen(false) }
+                                    : { target: "_blank", rel: "noopener noreferrer" })}
                                   className="flex items-start gap-3 rounded-xl p-2.5 -mx-2.5 hover:bg-white/5 transition-colors group/item"
                                 >
                                   <span className="w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 overflow-hidden">
