@@ -106,26 +106,21 @@ export function AboutSection() {
             </p>
           </Card>
 
-          <Card className="group p-7 bg-card/50 border-border hover:border-accent/50 hover:bg-card/70 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10 lg:col-span-2">
+          <Card className="group p-7 bg-card/50 border-border hover:border-accent/50 hover:bg-card/70 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10">
             <div className="flex items-start justify-between gap-4 mb-5">
               <div className="w-11 h-11 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:bg-accent/20 transition-colors shrink-0">
                 <RefreshCcw className="w-5 h-5 text-accent" />
               </div>
               <div className="flex flex-wrap gap-2 justify-end">
-                {["Per-chain playbooks", "Standby infra"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-[10px] font-mono text-muted-foreground bg-black/30 border border-white/5 rounded px-2 py-1"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                <span className="text-[10px] font-mono text-muted-foreground bg-black/30 border border-white/5 rounded px-2 py-1">
+                  Standby infra
+                </span>
               </div>
             </div>
             <h3 className="text-lg font-semibold text-foreground mb-2">Failover & Instant Response</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Every chain has its own failover and backup plan — rehearsed, documented, and kept warm. When something
-              breaks, standby infrastructure and an engineer are on it immediately, not after a support ticket.
+              Per-chain failover and backup playbooks, rehearsed and kept warm — standby infrastructure and an engineer
+              respond immediately.
             </p>
           </Card>
         </div>
