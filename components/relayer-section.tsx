@@ -3,12 +3,6 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, RefreshCw, Radio, GitBranch } from "lucide-react"
 
-const relayedChains = [
-  { name: "Cosmos Hub", logo: "/logos/cosmoshub.png" },
-  { name: "Dymension", logo: "/logos/dymension.png" },
-  { name: "Humans", logo: "/logos/humans.png" },
-]
-
 const highlights = [
   {
     icon: Radio,
@@ -89,47 +83,55 @@ export function RelayerSection() {
                 </span>
               </div>
 
-              <div className="space-y-9">
-                {relayedChains.map((chain, index) => (
-                  <div key={chain.name} className="flex items-center gap-4">
-                    <div className="flex flex-col items-center gap-2 w-16 shrink-0">
-                      <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center overflow-hidden">
-                        <Image src={chain.logo} alt={chain.name} width={30} height={30} className="w-[30px] h-[30px]" />
-                      </div>
-                      <span className="text-[10px] text-muted-foreground text-center leading-tight">{chain.name}</span>
-                    </div>
+              <div className="flex items-center gap-5 py-4">
+                <div className="flex flex-col items-center gap-3 w-24 shrink-0">
+                  <div className="w-16 h-16 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center overflow-hidden">
+                    <Image src="/logos/ibc.png" alt="IBC Protocol" width={44} height={44} className="w-11 h-11 rounded-full" />
+                  </div>
+                  <span className="text-[10px] text-muted-foreground text-center leading-tight">
+                    Cosmos SDK
+                    <br />
+                    chains
+                  </span>
+                </div>
 
-                    <div className="relative flex-1 h-px bg-gradient-to-r from-accent/40 via-white/15 to-accent/40">
-                      <span
-                        className="packet-dot"
-                        style={{ animationDelay: `${index * 1.1}s` }}
-                        aria-hidden="true"
-                      />
+                <div className="flex-1 space-y-7">
+                  {[0, 1, 2].map((channel) => (
+                    <div
+                      key={channel}
+                      className="relative h-px bg-gradient-to-r from-accent/40 via-white/15 to-accent/40"
+                    >
+                      <span className="packet-dot" style={{ animationDelay: `${channel * 1.1}s` }} aria-hidden="true" />
                       <span
                         className="packet-dot packet-dot-reverse"
-                        style={{ animationDelay: `${index * 1.1 + 1.8}s` }}
+                        style={{ animationDelay: `${channel * 1.1 + 1.8}s` }}
                         aria-hidden="true"
                       />
                     </div>
+                  ))}
+                </div>
 
-                    <div className="flex flex-col items-center gap-2 w-16 shrink-0">
-                      <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden">
-                        <Image
-                          src="/logos/huginn-logo.png"
-                          alt="Huginn Relayer"
-                          width={30}
-                          height={30}
-                          className="w-[30px] h-[30px]"
-                        />
-                      </div>
-                      <span className="text-[10px] text-muted-foreground text-center leading-tight">Huginn</span>
-                    </div>
+                <div className="flex flex-col items-center gap-3 w-24 shrink-0">
+                  <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden">
+                    <Image
+                      src="/logos/huginn-logo.png"
+                      alt="Huginn Relayer"
+                      width={44}
+                      height={44}
+                      className="w-11 h-11"
+                    />
                   </div>
-                ))}
+                  <span className="text-[10px] text-muted-foreground text-center leading-tight">
+                    Huginn
+                    <br />
+                    Relayer
+                  </span>
+                </div>
               </div>
 
-              <p className="text-xs text-muted-foreground mt-10 leading-relaxed">
-                Operating relayer infrastructure across the Cosmos SDK networks we validate — and beyond.
+              <p className="text-xs text-muted-foreground mt-8 leading-relaxed">
+                Operating IBC relayer infrastructure across Cosmos SDK networks — keeping channels open and packets
+                moving in both directions.
               </p>
             </div>
 
