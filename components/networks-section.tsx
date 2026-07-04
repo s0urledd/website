@@ -25,7 +25,7 @@ const networks = [
     name: "Canton",
     chain: "Mainnet",
     apr: "0",
-    logo: "/logos/canton.png",
+    logo: "/logos/canton-logo.png",
     accentColor: "rgba(250, 204, 21, 0.15)",
     stakeUrl:
       "https://www.cantonscan.com/party/jubileemarkets-validator-1%3A%3A122083160dd4450408fcda85e6e685865c403dd89a50a4f42041bcbd94d95a5cba6f",
@@ -66,15 +66,6 @@ const networks = [
     stakeUrl: "https://restake.app/humans/humanvaloper1tr853jvy38wn6pa05vsqtzt2mzrzpxxnazsmjn/stake",
   },
   {
-    name: "FlixDotFun",
-    chain: "Mainnet",
-    apr: "5.00",
-    logo: "/logos/omniflix.png",
-    accentColor: "rgba(191, 90, 242, 0.15)",
-    stakeUrl:
-      "https://wallet.keplr.app/chains/omniflix?modal=staking&chain=omniflixhub-1&validator_address=omniflixvaloper1nxhlmhaeme4j25d5vac6tk4wgy092xdsu77h4x&step_id=2",
-  },
-  {
     name: "Babylon",
     chain: "Mainnet",
     apr: "3.00",
@@ -92,21 +83,6 @@ const networks = [
     stakeUrl: "https://stake.espresso.network/",
   },
   {
-    name: "Elys",
-    chain: "Mainnet",
-    apr: "0",
-    logo: "/logos/elys.png",
-    accentColor: "rgba(132, 204, 22, 0.15)",
-  },
-  {
-    name: "Axone",
-    chain: "Mainnet",
-    apr: "10.00",
-    logo: "/logos/axone.svg",
-    accentColor: "rgba(59, 130, 246, 0.15)",
-    stakeUrl: "https://explore.axone.xyz/AXONE-MAINNET/staking/axonevaloper1jn9ycc8898lmhl749ng2q58fnum82pj4hd6unf",
-  },
-  {
     name: "Cosmos Hub",
     chain: "Testnet",
     apr: "0",
@@ -119,6 +95,13 @@ const networks = [
     apr: "0",
     logo: "/logos/monad.png",
     accentColor: "rgba(147, 51, 234, 0.15)",
+  },
+  {
+    name: "Canton",
+    chain: "Testnet",
+    apr: "0",
+    logo: "/logos/canton-logo.png",
+    accentColor: "rgba(250, 204, 21, 0.15)",
   },
 ]
 
