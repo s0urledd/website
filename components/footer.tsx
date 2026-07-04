@@ -74,7 +74,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://github.com/Huginntech/monadoring-telegram-bot"
+                  href="https://github.com/Huginn-Tech/monadoring"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground transition-colors"

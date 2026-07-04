@@ -20,14 +20,6 @@ export function Hero() {
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-8">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
-            </span>
-            <span className="text-sm font-medium text-accent">Trusted Validator Infrastructure</span>
-          </div>
-
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 text-balance leading-[1.1] tracking-tight">
             Empowering Blockchain
             <br />

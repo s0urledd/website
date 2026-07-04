@@ -62,7 +62,7 @@ export function ProductsSection() {
     },
     {
       icon: Bot,
-      name: "Monadoring Bot",
+      name: "Monadoring",
       tagline: "Monitoring",
       description:
         "Real-time monitoring solution for Monad validators. Get instant alerts for skipped blocks, timeouts, and chain issues.",
@@ -72,7 +72,7 @@ export function ProductsSection() {
         "Telegram & PagerDuty integration",
         "Discord bridge support",
       ],
-      link: "https://github.com/Huginntech/monadoring-telegram-bot",
+      link: "https://github.com/Huginn-Tech/monadoring",
     },
   ]
 
