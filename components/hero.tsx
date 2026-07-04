@@ -20,10 +20,20 @@ export function Hero() {
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-8">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+            </span>
+            <span className="text-sm font-medium text-accent">Trusted Validator Infrastructure</span>
+          </div>
+
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 text-balance leading-[1.1] tracking-tight">
             Empowering Blockchain
             <br />
-            <span className="text-accent">Innovation</span>
+            <span className="bg-gradient-to-r from-accent via-accent to-sky-400 bg-clip-text text-transparent">
+              Innovation
+            </span>
           </h1>
 
           <p className="text-xl sm:text-2xl text-muted-foreground mb-12 text-balance max-w-2xl leading-relaxed font-light">
@@ -50,6 +60,21 @@ export function Hero() {
             >
               <Link href="#contact">Get in Touch</Link>
             </Button>
+          </div>
+
+          <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg">
+            <div>
+              <div className="text-2xl sm:text-3xl font-bold text-foreground">12</div>
+              <div className="text-sm text-muted-foreground mt-1">Networks</div>
+            </div>
+            <div>
+              <div className="text-2xl sm:text-3xl font-bold text-foreground">$20.4M</div>
+              <div className="text-sm text-muted-foreground mt-1">Total Staked</div>
+            </div>
+            <div>
+              <div className="text-2xl sm:text-3xl font-bold text-foreground">99.9%</div>
+              <div className="text-sm text-muted-foreground mt-1">Uptime</div>
+            </div>
           </div>
         </div>
       </div>

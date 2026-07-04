@@ -7,7 +7,7 @@ const networks = [
   {
     name: "Monad",
     chain: "Mainnet",
-    apr: "14.38",
+    apr: "13.09",
     logo: "/logos/monad.png",
     accentColor: "rgba(147, 51, 234, 0.15)",
     stakeUrl: "https://monadvision.com/validator/0x67a3aEe77920Fa694B6FD7c7cf875493762A99f9",
@@ -20,6 +20,16 @@ const networks = [
     accentColor: "rgba(47, 86, 233, 0.15)",
     stakeUrl:
       "https://wallet.keplr.app/chains/cosmos-hub?modal=staking&chain=cosmoshub-4&validator_address=cosmosvaloper1am8wmhwta4swx8f4quvffu7hqw48aujwypp0ew&step_id=2",
+  },
+  {
+    name: "Canton",
+    chain: "Mainnet",
+    apr: "0",
+    logo: "/logos/canton-logo.png",
+    accentColor: "rgba(250, 204, 21, 0.15)",
+    stakeUrl:
+      "https://www.cantonscan.com/party/jubileemarkets-validator-1%3A%3A122083160dd4450408fcda85e6e685865c403dd89a50a4f42041bcbd94d95a5cba6f",
+    linkLabel: "View Validator",
   },
   {
     name: "Starknet",
@@ -56,41 +66,6 @@ const networks = [
     stakeUrl: "https://restake.app/humans/humanvaloper1tr853jvy38wn6pa05vsqtzt2mzrzpxxnazsmjn/stake",
   },
   {
-    name: "Jackal",
-    chain: "Mainnet",
-    apr: "7.50",
-    logo: "/logos/jackal.png",
-    accentColor: "rgba(255, 69, 58, 0.15)",
-    stakeUrl: "https://restake.app/jackal/jklvaloper1sxnq68tdscu5znhqn408av4vv3g9ka088l2s0j/stake",
-  },
-  {
-    name: "FlixDotFun",
-    chain: "Mainnet",
-    apr: "5.00",
-    logo: "/logos/omniflix.png",
-    accentColor: "rgba(191, 90, 242, 0.15)",
-    stakeUrl:
-      "https://wallet.keplr.app/chains/omniflix?modal=staking&chain=omniflixhub-1&validator_address=omniflixvaloper1nxhlmhaeme4j25d5vac6tk4wgy092xdsu77h4x&step_id=2",
-  },
-  {
-    name: "Quicksilver",
-    chain: "Mainnet",
-    apr: "23.60",
-    logo: "/logos/quicksilver.png",
-    accentColor: "rgba(142, 142, 147, 0.15)",
-    stakeUrl:
-      "https://wallet.keplr.app/chains/quicksilver?modal=staking&chain=quicksilver-2&validator_address=quickvaloper19wp3y9h3h4yz7teevse22zpxa74skahmd6q3z6&step_id=2",
-  },
-  {
-    name: "UX Chain",
-    chain: "Mainnet",
-    apr: "9.20",
-    logo: "/logos/uxchain.png",
-    accentColor: "rgba(52, 199, 89, 0.15)",
-    stakeUrl:
-      "https://wallet.keplr.app/chains/ux?modal=staking&chain=umee-1&validator_address=umeevaloper1vr59ktf5yehvxz06qe889sl4eg0dtak8l2yge3&step_id=2",
-  },
-  {
     name: "Babylon",
     chain: "Mainnet",
     apr: "3.00",
@@ -100,19 +75,12 @@ const networks = [
       "https://www.stakingrewards.com/stake-app?input=bitcoin&type=babylon-staking&provider=huginn&locked=true&best-deal=false",
   },
   {
-    name: "Elys",
+    name: "Espresso",
     chain: "Mainnet",
-    apr: "0",
-    logo: "/logos/elys.png",
-    accentColor: "rgba(132, 204, 22, 0.15)",
-  },
-  {
-    name: "Axone",
-    chain: "Mainnet",
-    apr: "10.00",
-    logo: "/logos/axone.svg",
-    accentColor: "rgba(59, 130, 246, 0.15)",
-    stakeUrl: "https://explore.axone.xyz/AXONE-MAINNET/staking/axonevaloper1jn9ycc8898lmhl749ng2q58fnum82pj4hd6unf",
+    apr: "4.14",
+    logo: "/logos/espresso.jpg",
+    accentColor: "rgba(196, 132, 88, 0.15)",
+    stakeUrl: "https://stake.espresso.network/",
   },
   {
     name: "Cosmos Hub",
@@ -132,35 +100,49 @@ const networks = [
     name: "Canton",
     chain: "Testnet",
     apr: "0",
-    logo: "/logos/canton.png",
-    accentColor: "rgba(59, 130, 246, 0.15)",
+    logo: "/logos/canton-logo.png",
+    accentColor: "rgba(250, 204, 21, 0.15)",
   },
 ]
 
 const categories = ["Mainnet", "Testnet"]
 
-export function NetworksSection() {
+export function NetworksSection({ monadApr }: { monadApr?: string | null }) {
   const [activeCategory, setActiveCategory] = useState("Mainnet")
 
-  const filteredNetworks = networks.filter((network) => network.chain === activeCategory)
+  const filteredNetworks = networks
+    .filter((network) => network.chain === activeCategory)
+    .map((network) =>
+      network.name === "Monad" && network.chain === "Mainnet" && monadApr ? { ...network, apr: monadApr } : network,
+    )
 
   return (
     <section id="networks" className="py-24 lg:py-32 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/[0.03] to-transparent pointer-events-none" />
+
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
+          <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+            Stake with us
+          </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white">Networks</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-light">
             Stake with confidence across our professionally validated blockchain networks
           </p>
-          <div className="flex items-center justify-center gap-6 mt-6 text-sm text-muted-foreground">
+          <div className="flex items-center justify-center gap-6 mt-8 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
-              <span className="text-white font-semibold">15+</span>
+              <span className="text-white font-semibold text-base">{networks.length}</span>
               <span>Chains</span>
             </div>
             <div className="w-px h-4 bg-white/20" />
             <div className="flex items-center gap-2">
-              <span className="text-white font-semibold">$20.4M</span>
+              <span className="text-white font-semibold text-base">$20.4M</span>
               <span>TVL</span>
+            </div>
+            <div className="w-px h-4 bg-white/20" />
+            <div className="flex items-center gap-2">
+              <span className="text-white font-semibold text-base">99.9%</span>
+              <span>Uptime</span>
             </div>
           </div>
         </div>
@@ -185,7 +167,7 @@ export function NetworksSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {filteredNetworks.map((network) => (
-            <NetworkCard key={network.name} {...network} />
+            <NetworkCard key={`${network.name}-${network.chain}`} {...network} />
           ))}
         </div>
       </div>
