@@ -78,7 +78,7 @@ const networks = [
     name: "Espresso",
     chain: "Mainnet",
     apr: "4.14",
-    logo: "/logos/espresso.jpg",
+    logo: "/logos/espresso.svg",
     accentColor: "rgba(196, 132, 88, 0.15)",
     stakeUrl: "https://stake.espresso.network/",
   },

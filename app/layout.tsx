@@ -86,7 +86,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth" style={{ scrollPaddingTop: "5rem" }}>
+    <html lang="en" className="dark scroll-smooth" style={{ scrollPaddingTop: "7.5rem" }}>
       <body className={`${inter.variable} font-sans antialiased`}>
         {children}
         <Analytics />

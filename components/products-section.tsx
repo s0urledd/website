@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, BookOpen, Shield, Video, Bot, Check } from "lucide-react"
+import { ExternalLink, BookOpen, Shield, Video, Bot, Check, Code2, Server, Activity } from "lucide-react"
 
 export function ProductsSection() {
   const products = [
@@ -62,7 +62,7 @@ export function ProductsSection() {
     },
     {
       icon: Bot,
-      name: "Monadoring Bot",
+      name: "Monadoring",
       tagline: "Monitoring",
       description:
         "Real-time monitoring solution for Monad validators. Get instant alerts for skipped blocks, timeouts, and chain issues.",
@@ -72,7 +72,7 @@ export function ProductsSection() {
         "Telegram & PagerDuty integration",
         "Discord bridge support",
       ],
-      link: "https://github.com/Huginntech/monadoring-telegram-bot",
+      link: "https://github.com/Huginn-Tech/monadoring",
     },
   ]
 
@@ -145,6 +145,135 @@ export function ProductsSection() {
               </Button>
             </Card>
           ))}
+        </div>
+
+        <div className="max-w-7xl mx-auto mt-16">
+          <div className="flex items-center gap-4 mb-8">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground shrink-0">
+              Developer Infrastructure
+            </h3>
+            <div className="h-px flex-1 bg-gradient-to-r from-border to-transparent" />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <Card className="group relative overflow-hidden p-8 bg-card/60 backdrop-blur-sm border-border hover:border-accent/50 hover:shadow-xl hover:shadow-accent/10 transition-all duration-500 flex flex-col">
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-accent/20">
+                  <Code2 className="w-7 h-7 text-accent" />
+                </div>
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-accent/80 bg-accent/10 border border-accent/20 rounded-full px-3 py-1">
+                  REST API
+                </span>
+              </div>
+
+              <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-accent transition-colors">
+                Validator & Staking API
+              </h3>
+              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                RESTful API for Monad validator metadata, uptime statistics, and live on-chain staking data powered by
+                the Monad staking precompile. Free to use on Mainnet and Testnet.
+              </p>
+
+              <div className="space-y-2 mb-6 font-mono text-xs">
+                {[
+                  "/validators",
+                  "/validator/uptime/{idOrAddress}",
+                  "/staking/pool",
+                  "/staking/delegator/{address}",
+                ].map((endpoint) => (
+                  <div
+                    key={endpoint}
+                    className="flex items-center gap-2.5 rounded-lg bg-black/30 border border-white/5 px-3 py-2"
+                  >
+                    <span className="text-[10px] font-semibold text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 rounded px-1.5 py-0.5">
+                      GET
+                    </span>
+                    <span className="text-muted-foreground truncate">{endpoint}</span>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-xs text-muted-foreground mb-6 flex-grow">
+                Uptime history, delegator lists, epoch info and more — 60 requests per minute, no key required.
+              </p>
+
+              <Button
+                variant="outline"
+                className="w-full group/btn bg-transparent hover:bg-accent/10 hover:border-accent/50"
+                asChild
+              >
+                <a
+                  href="https://validator-api.huginn.tech/monad-api"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Explore the Validator & Staking API documentation"
+                >
+                  Explore the API
+                  <ExternalLink className="ml-2 w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                </a>
+              </Button>
+            </Card>
+
+            <Card className="group relative overflow-hidden p-8 bg-card/60 backdrop-blur-sm border-border hover:border-accent/50 hover:shadow-xl hover:shadow-accent/10 transition-all duration-500 flex flex-col">
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-accent/20">
+                  <Server className="w-7 h-7 text-accent" />
+                </div>
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-accent/80 bg-accent/10 border border-accent/20 rounded-full px-3 py-1">
+                  Public Endpoints
+                </span>
+              </div>
+
+              <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-accent transition-colors">
+                Free Monad RPC & WSS
+              </h3>
+              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                Public JSON-RPC and WebSocket endpoints for Monad, running on our validator infrastructure — with a
+                live status dashboard so you always know they're healthy.
+              </p>
+
+              <div className="grid grid-cols-3 gap-3 mb-6">
+                {[
+                  { label: "JSON-RPC", sub: "HTTPS" },
+                  { label: "WebSocket", sub: "WSS" },
+                  { label: "Status", sub: "Live" },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-lg bg-black/30 border border-white/5 px-3 py-3 text-center"
+                  >
+                    <div className="text-xs font-semibold text-foreground">{item.label}</div>
+                    <div className="text-[10px] text-muted-foreground mt-0.5 uppercase tracking-wider">{item.sub}</div>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-xs text-muted-foreground mb-6 flex-grow flex items-center gap-2">
+                <Activity className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                Free for builders in the Monad ecosystem — uptime tracked transparently.
+              </p>
+
+              <Button
+                variant="outline"
+                className="w-full group/btn bg-transparent hover:bg-accent/10 hover:border-accent/50"
+                asChild
+              >
+                <a
+                  href="https://monad-status.huginn.tech/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Check Monad RPC endpoint status"
+                >
+                  View Endpoints & Status
+                  <ExternalLink className="ml-2 w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                </a>
+              </Button>
+            </Card>
+          </div>
         </div>
       </div>
     </section>
