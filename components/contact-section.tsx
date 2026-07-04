@@ -28,6 +28,9 @@ export function ContactSection() {
     <section id="contact" className="py-24 lg:py-32 bg-secondary/30">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
+          <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+            Contact
+          </span>
           <h2 className="text-4xl sm:text-5xl font-bold mb-5 tracking-tight">Get in Touch</h2>
           <p className="text-lg text-muted-foreground font-light leading-relaxed">
             Have a question or want to work together? We'd love to hear from you. You can also reach out for special

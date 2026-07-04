@@ -11,15 +11,16 @@ interface NetworkCardProps {
   logo: string
   accentColor?: string
   stakeUrl?: string
+  linkLabel?: string
 }
 
-export function NetworkCard({ name, chain, apr, logo, stakeUrl }: NetworkCardProps) {
+export function NetworkCard({ name, chain, apr, logo, accentColor, stakeUrl, linkLabel }: NetworkCardProps) {
   return (
     <Card className="group relative overflow-hidden border border-border bg-card/50 backdrop-blur-sm hover:shadow-xl hover:shadow-accent/10 transition-all duration-500 hover:border-accent/50 hover:-translate-y-1">
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
-          background: "radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 70%)",
+          background: `radial-gradient(circle at top right, ${accentColor || "rgba(59, 130, 246, 0.1)"}, transparent 70%)`,
         }}
       />
 
@@ -49,8 +50,13 @@ export function NetworkCard({ name, chain, apr, logo, stakeUrl }: NetworkCardPro
 
         {stakeUrl ? (
           <Button className="w-full group/btn text-sm font-medium bg-transparent" variant="outline" size="sm" asChild>
-            <a href={stakeUrl} target="_blank" rel="noopener noreferrer" aria-label={`Stake ${name} on ${chain}`}>
-              Stake Now
+            <a
+              href={stakeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${linkLabel || "Stake"} ${name} on ${chain}`}
+            >
+              {linkLabel || "Stake Now"}
               <ArrowUpRight className="ml-2 w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
             </a>
           </Button>
@@ -62,7 +68,7 @@ export function NetworkCard({ name, chain, apr, logo, stakeUrl }: NetworkCardPro
             disabled
             aria-label={`Staking for ${name} coming soon`}
           >
-            Stake Now
+            Coming Soon
             <ArrowUpRight className="ml-2 w-3.5 h-3.5 opacity-50" />
           </Button>
         )}

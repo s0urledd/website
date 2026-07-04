@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     "cosmos hub",
     "staking",
     "monad",
+    "canton network",
     "starknet",
     "dymension",
     "validator services",
