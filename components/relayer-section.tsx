@@ -38,7 +38,7 @@ export function RelayerSection() {
               packet by packet
             </h2>
             <p className="text-lg text-muted-foreground font-light leading-relaxed mb-8">
-              Beyond validation, we operate IBC relayers for Cosmos SDK networks — keeping channels healthy and value
+              Beyond validation, we run IBC relayers for Cosmos SDK networks. We keep the channels healthy and the value
               flowing between the chains we support.
             </p>
 
@@ -130,8 +130,8 @@ export function RelayerSection() {
               </div>
 
               <p className="text-xs text-muted-foreground mt-8 leading-relaxed">
-                Operating IBC relayer infrastructure across Cosmos SDK networks — keeping channels open and packets
-                moving in both directions.
+                We run IBC relayer infrastructure across Cosmos SDK networks, keeping channels open and packets moving in
+                both directions.
               </p>
             </div>
 
