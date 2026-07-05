@@ -1,6 +1,22 @@
+import Image from "next/image"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Play, TriangleAlert, Check, Zap } from "lucide-react"
+
+function BrandVisual({ src, alt, position = "center" }: { src: string; alt: string; position?: string }) {
+  return (
+    <div className="relative h-44 overflow-hidden border-b border-white/5">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+        style={{ objectPosition: position }}
+        sizes="(max-width: 768px) 100vw, 33vw"
+      />
+    </div>
+  )
+}
 
 function DiagonalStripes() {
   return (
@@ -76,31 +92,6 @@ function TvVisual() {
             <div className="h-full w-[62%] rounded-full bg-fuchsia-400" />
           </div>
           <span className="text-[9px] font-mono text-muted-foreground">12:47</span>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function MonvalVisual() {
-  return (
-    <div className="relative h-44 overflow-hidden border-b border-white/5 bg-gradient-to-br from-violet-500/[0.15] via-violet-800/[0.07] to-transparent">
-      <div className="absolute inset-x-8 top-7 bottom-0 rounded-t-xl bg-[#0b0e15] border border-white/10 border-b-0 shadow-2xl shadow-black/60 transition-transform duration-500 group-hover:-translate-y-1">
-        <div className="flex items-center gap-1.5 px-3.5 py-2.5 border-b border-white/5">
-          <span className="w-2 h-2 rounded-full bg-white/15" />
-          <span className="w-2 h-2 rounded-full bg-white/15" />
-          <span className="w-2 h-2 rounded-full bg-white/15" />
-          <span className="ml-2 text-[9px] font-mono text-muted-foreground">monval</span>
-        </div>
-        <div className="px-3.5 py-3 font-mono text-[10px] space-y-1.5">
-          <div className="text-foreground/80">
-            <span className="text-violet-400">$</span> monval snapshot latest
-          </div>
-          <div className="text-violet-300/90">✓ mainnet snapshot ready · epoch 1711</div>
-          <div className="text-foreground/80">
-            <span className="text-violet-400">$</span> monval rpc health
-          </div>
-          <div className="text-violet-300/90">✓ all endpoints healthy</div>
         </div>
       </div>
     </div>
@@ -244,7 +235,7 @@ const products = [
     description: "Everything a Monad validator needs: snapshots, forkpoints, RPC lists, and battle-tested CLI recipes.",
     cta: "Open Monval",
     link: "https://monval.huginn.tech",
-    visual: MonvalVisual,
+    visual: () => <BrandVisual src="/images/products/monval.png" alt="Monval" />,
   },
   {
     name: "Monadoring",
