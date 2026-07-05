@@ -186,7 +186,7 @@ const products = [
   {
     name: "Cosmos.Wiki",
     tagline: "Knowledge Base",
-    description: "The reference library of the Cosmos ecosystem — network docs, guides, and handbooks in one place.",
+    description: "Network docs, guides, and handbooks for the whole Cosmos ecosystem, all in one place.",
     cta: "Visit Cosmos.Wiki",
     link: "https://cosmos.wiki",
     visual: WikiVisual,
@@ -203,7 +203,7 @@ const products = [
   {
     name: "Huginn TV",
     tagline: "Media",
-    description: "Validator operations explained by people who run them — tutorials, interviews, ecosystem coverage.",
+    description: "Tutorials, interviews, and ecosystem coverage from a team that runs validators every day.",
     cta: "Watch Huginn TV",
     link: "https://huginn.tv",
     visual: TvVisual,
@@ -219,7 +219,7 @@ const products = [
   {
     name: "Monadoring",
     tagline: "Monitoring",
-    description: "Open-source watchdog for Monad validators — skipped blocks and chain halts go straight to your pager.",
+    description: "Open-source watchdog for Monad validators. Skipped blocks and chain halts go straight to your pager.",
     cta: "View on GitHub",
     link: "https://github.com/Huginn-Tech/monadoring",
     visual: MonadoringVisual,
@@ -231,7 +231,7 @@ const infra = [
     name: "Validator & Staking API",
     tagline: "REST API",
     description:
-      "Live Monad validator, uptime, and staking data over a clean REST API — free on Mainnet and Testnet, no key required.",
+      "Live Monad validator, uptime, and staking data over a clean REST API. Free on Mainnet and Testnet, no key required.",
     meta: ["15+ endpoints", "60 req/min", "Mainnet · Testnet"],
     cta: "Explore the API",
     link: "https://validator-api.huginn.tech/monad-api",
@@ -261,7 +261,7 @@ export function ProductsSection() {
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold mb-5 tracking-tight">Our Products</h2>
           <p className="text-lg text-muted-foreground font-light leading-relaxed">
-            Tools we built for our own validator operations — polished and shared with the ecosystem
+            Tools we built for our own validator operations, now open to everyone
           </p>
         </div>
 
