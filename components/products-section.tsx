@@ -2,12 +2,26 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Play, TriangleAlert, Check, Zap } from "lucide-react"
 
+function DiagonalStripes() {
+  return (
+    <div
+      className="absolute inset-0 pointer-events-none"
+      aria-hidden="true"
+      style={{
+        backgroundImage:
+          "repeating-linear-gradient(115deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 2px, transparent 2px, transparent 16px)",
+      }}
+    />
+  )
+}
+
 function WikiVisual() {
   return (
-    <div className="relative h-44 overflow-hidden border-b border-white/5 bg-gradient-to-br from-sky-500/[0.08] via-transparent to-transparent">
+    <div className="relative h-44 overflow-hidden border-b border-white/5 bg-gradient-to-br from-fuchsia-600/[0.16] via-purple-700/[0.09] to-indigo-900/[0.05]">
+      <DiagonalStripes />
       <div className="absolute inset-x-8 top-7 bottom-0 rounded-t-xl bg-[#0b0e15] border border-white/10 border-b-0 shadow-2xl shadow-black/60 p-3.5 flex gap-3 transition-transform duration-500 group-hover:-translate-y-1">
         <div className="w-14 shrink-0 rounded-md bg-white/[0.04] border border-white/5 p-2 space-y-2">
-          <div className="h-1.5 w-9 rounded-full bg-accent/60" />
+          <div className="h-1.5 w-9 rounded-full bg-fuchsia-400/70" />
           <div className="h-1.5 w-7 rounded-full bg-white/10" />
           <div className="h-1.5 w-8 rounded-full bg-white/10" />
           <div className="h-1.5 w-6 rounded-full bg-white/10" />
@@ -20,7 +34,7 @@ function WikiVisual() {
             <div className="h-1.5 w-[92%] rounded-full bg-white/10" />
             <div className="h-1.5 w-[70%] rounded-full bg-white/10" />
           </div>
-          <div className="mt-3 h-6 w-24 rounded-md bg-accent/15 border border-accent/25" />
+          <div className="mt-3 h-6 w-24 rounded-md bg-fuchsia-500/20 border border-fuchsia-400/30" />
         </div>
       </div>
     </div>
@@ -49,16 +63,17 @@ function GuardVisual() {
 
 function TvVisual() {
   return (
-    <div className="relative h-44 overflow-hidden border-b border-white/5 bg-gradient-to-br from-violet-500/[0.08] via-transparent to-transparent">
+    <div className="relative h-44 overflow-hidden border-b border-white/5 bg-gradient-to-br from-purple-600/[0.16] via-fuchsia-600/[0.09] to-pink-700/[0.05]">
+      <DiagonalStripes />
       <div className="absolute inset-x-8 top-7 bottom-0 rounded-t-xl bg-[#0b0e15] border border-white/10 border-b-0 shadow-2xl shadow-black/60 flex flex-col transition-transform duration-500 group-hover:-translate-y-1">
-        <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-accent/[0.06] to-transparent">
+        <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-fuchsia-500/[0.08] to-transparent">
           <div className="w-11 h-11 rounded-full bg-white/10 border border-white/20 backdrop-blur flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
             <Play className="w-4 h-4 text-white fill-white ml-0.5" />
           </div>
         </div>
         <div className="px-3.5 py-2.5 flex items-center gap-2.5">
           <div className="flex-1 h-1 rounded-full bg-white/10 overflow-hidden">
-            <div className="h-full w-[62%] rounded-full bg-accent" />
+            <div className="h-full w-[62%] rounded-full bg-fuchsia-400" />
           </div>
           <span className="text-[9px] font-mono text-muted-foreground">12:47</span>
         </div>
@@ -69,7 +84,7 @@ function TvVisual() {
 
 function MonvalVisual() {
   return (
-    <div className="relative h-44 overflow-hidden border-b border-white/5 bg-gradient-to-br from-emerald-500/[0.07] via-transparent to-transparent">
+    <div className="relative h-44 overflow-hidden border-b border-white/5 bg-gradient-to-br from-violet-500/[0.15] via-violet-800/[0.07] to-transparent">
       <div className="absolute inset-x-8 top-7 bottom-0 rounded-t-xl bg-[#0b0e15] border border-white/10 border-b-0 shadow-2xl shadow-black/60 transition-transform duration-500 group-hover:-translate-y-1">
         <div className="flex items-center gap-1.5 px-3.5 py-2.5 border-b border-white/5">
           <span className="w-2 h-2 rounded-full bg-white/15" />
@@ -79,13 +94,13 @@ function MonvalVisual() {
         </div>
         <div className="px-3.5 py-3 font-mono text-[10px] space-y-1.5">
           <div className="text-foreground/80">
-            <span className="text-accent">$</span> monval snapshot latest
+            <span className="text-violet-400">$</span> monval snapshot latest
           </div>
-          <div className="text-emerald-400/90">✓ mainnet snapshot ready · epoch 1711</div>
+          <div className="text-violet-300/90">✓ mainnet snapshot ready · epoch 1711</div>
           <div className="text-foreground/80">
-            <span className="text-accent">$</span> monval rpc health
+            <span className="text-violet-400">$</span> monval rpc health
           </div>
-          <div className="text-emerald-400/90">✓ all endpoints healthy</div>
+          <div className="text-violet-300/90">✓ all endpoints healthy</div>
         </div>
       </div>
     </div>
@@ -94,19 +109,34 @@ function MonvalVisual() {
 
 function MonadoringVisual() {
   return (
-    <div className="relative h-44 overflow-hidden border-b border-white/5 bg-gradient-to-br from-rose-500/[0.07] via-transparent to-transparent">
-      <div className="absolute inset-x-8 top-1/2 -translate-y-1/2 rounded-xl bg-[#0b0e15] border border-white/10 shadow-2xl shadow-black/60 divide-y divide-white/5 transition-transform duration-500 group-hover:-translate-y-[53%]">
-        <div className="px-3.5 py-2 flex items-center gap-2 font-mono text-[10px]">
-          <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0" />
-          <span className="text-amber-400/90">skipped block #4,812,332</span>
+    <div className="relative h-44 overflow-hidden border-b border-white/5 bg-gradient-to-br from-emerald-500/[0.09] via-transparent to-transparent">
+      <div className="absolute inset-x-8 top-1/2 -translate-y-1/2 rounded-xl bg-[#080a08] border border-white/10 shadow-2xl shadow-black/60 divide-y divide-white/5 transition-transform duration-500 group-hover:-translate-y-[53%]">
+        <div className="px-3.5 py-2.5">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-[9px] font-mono text-foreground/70">Monad Mainnet · (Huginn)</span>
+            <span className="flex items-center gap-1 text-[9px] font-mono text-emerald-400">
+              <span className="w-1 h-1 rounded-full bg-emerald-400" />
+              Finalized
+            </span>
+          </div>
+          <div className="flex gap-[3px]">
+            {Array.from({ length: 22 }).map((_, i) => (
+              <span
+                key={i}
+                className={`h-2 flex-1 rounded-[2px] ${
+                  i === 14 ? "bg-red-400/90" : i === 21 ? "bg-indigo-400/90" : "bg-emerald-400/80"
+                }`}
+              />
+            ))}
+          </div>
         </div>
         <div className="px-3.5 py-2 flex items-center gap-2 font-mono text-[10px]">
-          <span className="w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0" />
-          <span className="text-sky-400/90">paged on-call · telegram + pagerduty</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-red-400 shrink-0" />
+          <span className="text-red-400/90">missed block · paged on-call</span>
         </div>
         <div className="px-3.5 py-2 flex items-center gap-2 font-mono text-[10px]">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
-          <span className="text-emerald-400/90">signing resumed · uptime 99.98%</span>
+          <span className="text-emerald-400/90">uptime (24h) 100.00% · 0 missed</span>
         </div>
       </div>
     </div>
