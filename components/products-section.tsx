@@ -74,35 +74,71 @@ function EspressoDutyVisual() {
 
 function ApiVisual() {
   return (
-    <div className="relative h-48 overflow-hidden border-b border-white/5 bg-gradient-to-br from-accent/[0.08] via-transparent to-transparent">
-      <div className="absolute inset-x-8 top-6 bottom-0 rounded-t-xl bg-[#0b0e15] border border-white/10 border-b-0 shadow-2xl shadow-black/60 transition-transform duration-500 group-hover:-translate-y-1">
-        <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/5 font-mono text-[10px]">
+    <div className="relative h-60 overflow-hidden border-b border-white/5 bg-gradient-to-br from-accent/[0.07] via-transparent to-transparent">
+      <div
+        className="absolute inset-x-0 top-0 h-32 pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(56,189,248,0.30) 1px, transparent 1px), radial-gradient(rgba(99,102,241,0.22) 1px, transparent 1px)",
+          backgroundSize: "10px 10px, 16px 16px",
+          backgroundPosition: "0 0, 5px 8px",
+          maskImage: "linear-gradient(180deg, black 20%, transparent)",
+          WebkitMaskImage: "linear-gradient(180deg, black 20%, transparent)",
+        }}
+      />
+
+      <div className="absolute top-10 left-12 -right-16 -bottom-6 rounded-tl-2xl bg-[#0d1117] border border-white/10 shadow-[0_28px_70px_-16px_rgba(0,0,0,0.9)] transition-transform duration-500 group-hover:-translate-y-1.5">
+        <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/[0.07] font-mono text-[10px]">
+          <span className="flex gap-1.5 mr-1">
+            <span className="w-2 h-2 rounded-full bg-[#ff5f57]/70" />
+            <span className="w-2 h-2 rounded-full bg-[#febc2e]/70" />
+            <span className="w-2 h-2 rounded-full bg-[#28c840]/70" />
+          </span>
           <span className="text-[9px] font-semibold text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 rounded px-1.5 py-0.5">
             GET
           </span>
           <span className="text-muted-foreground">/monad-api/staking/pool</span>
-          <span className="ml-auto text-emerald-400/80">200</span>
+          <span className="text-emerald-400/80 ml-3">200 OK</span>
         </div>
-        <div className="px-4 py-3 font-mono text-[10.5px] leading-relaxed">
-          <div className="text-muted-foreground">{"{"}</div>
-          <div className="pl-4">
-            <span className="text-sky-300">"apr"</span>
-            <span className="text-muted-foreground">: </span>
-            <span className="text-amber-300">13.09</span>
-            <span className="text-muted-foreground">,</span>
+        <div className="flex font-mono text-[10.5px] leading-[1.9]">
+          <div className="px-3 py-2.5 text-right text-muted-foreground/40 select-none border-r border-white/[0.05]">
+            {[1, 2, 3, 4, 5, 6, 7].map((n) => (
+              <div key={n}>{n}</div>
+            ))}
           </div>
-          <div className="pl-4">
-            <span className="text-sky-300">"active_validators"</span>
-            <span className="text-muted-foreground">: </span>
-            <span className="text-amber-300">198</span>
-            <span className="text-muted-foreground">,</span>
+          <div className="px-4 py-2.5">
+            <div className="text-muted-foreground">{"{"}</div>
+            <div className="pl-4">
+              <span className="text-sky-300">"success"</span>
+              <span className="text-muted-foreground">: </span>
+              <span className="text-violet-300">true</span>
+              <span className="text-muted-foreground">,</span>
+            </div>
+            <div className="pl-4">
+              <span className="text-sky-300">"total_staked"</span>
+              <span className="text-muted-foreground">: </span>
+              <span className="text-amber-300">15073654424.53</span>
+              <span className="text-muted-foreground">,</span>
+            </div>
+            <div className="pl-4">
+              <span className="text-sky-300">"apr"</span>
+              <span className="text-muted-foreground">: </span>
+              <span className="text-amber-300">13.09</span>
+              <span className="text-muted-foreground">,</span>
+            </div>
+            <div className="pl-4">
+              <span className="text-sky-300">"active_validators"</span>
+              <span className="text-muted-foreground">: </span>
+              <span className="text-amber-300">198</span>
+              <span className="text-muted-foreground">,</span>
+            </div>
+            <div className="pl-4">
+              <span className="text-sky-300">"epoch"</span>
+              <span className="text-muted-foreground">: </span>
+              <span className="text-amber-300">1711</span>
+            </div>
+            <div className="text-muted-foreground">{"}"}</div>
           </div>
-          <div className="pl-4">
-            <span className="text-sky-300">"epoch"</span>
-            <span className="text-muted-foreground">: </span>
-            <span className="text-amber-300">1711</span>
-          </div>
-          <div className="text-muted-foreground">{"}"}</div>
         </div>
       </div>
     </div>
@@ -110,32 +146,68 @@ function ApiVisual() {
 }
 
 function RpcVisual() {
-  const bars = [
-    100, 100, 100, 100, 98, 100, 100, 100, 100, 100, 100, 96, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 99,
-    100, 100, 100, 100, 100, 100, 100,
-  ]
   return (
-    <div className="relative h-48 overflow-hidden border-b border-white/5 bg-gradient-to-br from-emerald-500/[0.06] via-transparent to-transparent">
-      <div className="absolute inset-x-8 top-6 bottom-0 rounded-t-xl bg-[#0b0e15] border border-white/10 border-b-0 shadow-2xl shadow-black/60 p-4 space-y-4 transition-transform duration-500 group-hover:-translate-y-1">
-        {["rpc.monad.huginn.tech", "wss.monad.huginn.tech"].map((endpoint) => (
-          <div key={endpoint}>
-            <div className="flex items-center justify-between mb-1.5">
-              <span className="font-mono text-[10px] text-foreground/80">{endpoint}</span>
-              <span className="flex items-center gap-1.5 text-[10px] text-emerald-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                Operational
-              </span>
-            </div>
-            <div className="flex gap-[3px]">
-              {bars.map((v, i) => (
-                <span
-                  key={i}
-                  className={`h-3.5 flex-1 rounded-[2px] ${v === 100 ? "bg-emerald-400/70" : "bg-amber-400/70"}`}
-                />
-              ))}
+    <div className="relative h-60 overflow-hidden border-b border-white/5">
+      <div
+        className="absolute inset-x-0 top-0 h-36 pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(52,211,153,0.32) 1px, transparent 1px), radial-gradient(rgba(56,189,248,0.20) 1px, transparent 1px)",
+          backgroundSize: "10px 10px, 16px 16px",
+          backgroundPosition: "0 0, 5px 8px",
+          maskImage: "linear-gradient(180deg, black 25%, transparent)",
+          WebkitMaskImage: "linear-gradient(180deg, black 25%, transparent)",
+        }}
+      />
+      <div className="absolute -top-10 right-10 w-56 h-56 rounded-full bg-emerald-500/[0.05] blur-3xl pointer-events-none" />
+
+      <div className="absolute left-1/2 -translate-x-1/2 top-12 w-[300px] rounded-2xl bg-[#0d1117]/95 backdrop-blur border border-white/10 shadow-[0_28px_70px_-16px_rgba(0,0,0,0.9)] transition-transform duration-500 group-hover:-translate-y-1.5">
+        <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/[0.07]">
+          <span className="text-[11px] font-medium text-foreground/85">Huginn Monad RPC</span>
+          <span className="text-muted-foreground/50 text-xs leading-none">×</span>
+        </div>
+        <div className="px-5 pt-4 pb-4">
+          <div className="relative w-44 mx-auto">
+            <svg viewBox="0 0 120 64" className="w-full">
+              <path
+                d="M10 58 A50 50 0 0 1 110 58"
+                fill="none"
+                stroke="rgba(255,255,255,0.08)"
+                strokeWidth="9"
+                strokeLinecap="round"
+              />
+              <path
+                d="M10 58 A50 50 0 0 1 104 33"
+                fill="none"
+                stroke="url(#rpcGauge)"
+                strokeWidth="9"
+                strokeLinecap="round"
+              />
+              <defs>
+                <linearGradient id="rpcGauge" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#34d399" stopOpacity="0.35" />
+                  <stop offset="100%" stopColor="#34d399" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div className="absolute inset-x-0 bottom-0 text-center">
+              <div className="text-xl font-bold text-foreground tracking-tight leading-none">99.98%</div>
+              <div className="text-[9px] font-mono uppercase tracking-wider text-muted-foreground mt-1">
+                uptime · 30 days
+              </div>
             </div>
           </div>
-        ))}
+          <div className="flex items-center justify-center gap-4 mt-4 pt-3 border-t border-white/[0.06] font-mono text-[10px]">
+            <span className="flex items-center gap-1.5 text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              rpc · operational
+            </span>
+            <span className="flex items-center gap-1.5 text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              wss · operational
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   )
