@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown, Bot, ArrowRight, Code2, Server, RefreshCw } from "lucide-react"
+import { Menu, X, ChevronDown, Bot, ArrowRight, Code2, Server, RefreshCw, BellRing } from "lucide-react"
 import { useState } from "react"
 
 const productGroups = [
@@ -33,6 +33,12 @@ const productGroups = [
         description: "Free public endpoints with live status",
         href: "https://monad-status.huginn.tech/",
         icon: Server,
+      },
+      {
+        name: "EspressoDuty",
+        description: "Uptime monitoring for Espresso validators",
+        href: "https://github.com/s0urledd/espressoduty",
+        icon: BellRing,
       },
     ],
   },

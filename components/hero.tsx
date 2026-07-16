@@ -1,11 +1,22 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Activity, Layers } from "lucide-react"
+
+const heroChains = [
+  { name: "Monad", logo: "/logos/monad.png" },
+  { name: "Cosmos Hub", logo: "/logos/cosmoshub.png" },
+  { name: "Canton", logo: "/logos/canton-logo.png" },
+  { name: "Espresso", logo: "/logos/espresso.svg" },
+  { name: "Polkadot", logo: "/logos/polkadot.png" },
+]
+
+const uptimeBars = [96, 100, 100, 98, 100, 100, 100, 97, 100, 100, 99, 100, 100, 100, 98, 100, 100, 100, 100, 100]
 
 export function Hero() {
   return (
-    <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
-      {/* Background pattern */}
+    <section className="relative pt-40 pb-24 lg:pt-52 lg:pb-32 overflow-hidden">
+      {/* Grid pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div
           className="absolute inset-0"
@@ -15,57 +26,122 @@ export function Hero() {
         />
       </div>
 
-      {/* Accent glow effect */}
-      <div className="absolute top-1/3 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      {/* Nordic aurora glow */}
+      <div className="absolute -top-48 right-[-12%] w-[720px] h-[720px] rounded-full bg-[radial-gradient(circle,rgba(56,189,248,0.13),transparent_62%)] blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 left-[-16%] w-[620px] h-[620px] rounded-full bg-[radial-gradient(circle,rgba(99,102,241,0.11),transparent_62%)] blur-3xl pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-1/4 w-[520px] h-[420px] bg-[radial-gradient(ellipse,rgba(16,185,129,0.08),transparent_62%)] blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
-        <div className="max-w-3xl">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 text-balance leading-[1.1] tracking-tight">
-            Empowering Blockchain
-            <br />
-            <span className="bg-gradient-to-r from-accent via-accent to-sky-400 bg-clip-text text-transparent">
-              Innovation
-            </span>
-          </h1>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-16 items-center">
+          <div className="max-w-3xl">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 text-balance leading-[1.08] tracking-tight">
+              Trusted infrastructure,
+              <br />
+              <span className="bg-gradient-to-r from-accent via-accent to-sky-400 bg-clip-text text-transparent">
+                reliable validator
+              </span>
+              <br />
+              across chains.
+            </h1>
 
-          <p className="text-xl sm:text-2xl text-muted-foreground mb-12 text-balance max-w-2xl leading-relaxed font-light">
-            Practical solutions for a decentralized future. We deliver reliable tools, services, and expertise to
-            support blockchain ecosystems.
-          </p>
+            <p className="text-xl sm:text-2xl text-muted-foreground mb-12 text-balance max-w-2xl leading-relaxed font-light">
+              Practical solutions for a decentralized future. We deliver reliable tools, services, and expertise to
+              support blockchain ecosystems.
+            </p>
 
-          <div className="flex flex-col sm:flex-row items-start gap-4">
-            <Button
-              size="lg"
-              className="w-full sm:w-auto px-8 h-14 text-base font-medium rounded-xl bg-gradient-to-r from-accent via-accent to-accent/90 hover:from-accent hover:via-accent/95 hover:to-accent/80 shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/40 transition-all duration-300 hover:scale-[1.02] border border-accent/20"
-              asChild
-            >
-              <Link href="#networks">
-                Stake with Us
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="w-full sm:w-auto px-8 h-14 text-base font-medium rounded-xl bg-white/5 backdrop-blur-sm border-white/20 hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
-              asChild
-            >
-              <Link href="#contact">Get in Touch</Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row items-start gap-4">
+              <Button
+                size="lg"
+                className="w-full sm:w-auto px-8 h-14 text-base font-medium rounded-xl bg-gradient-to-r from-accent via-accent to-accent/90 hover:from-accent hover:via-accent/95 hover:to-accent/80 shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/40 transition-all duration-300 hover:scale-[1.02] border border-accent/20"
+                asChild
+              >
+                <Link href="#networks">
+                  Stake with Us
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto px-8 h-14 text-base font-medium rounded-xl bg-white/5 backdrop-blur-sm border-white/20 hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
+                asChild
+              >
+                <Link href="#contact">Get in Touch</Link>
+              </Button>
+            </div>
+
+            <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg lg:hidden">
+              <div>
+                <div className="text-2xl sm:text-3xl font-bold text-foreground">12</div>
+                <div className="text-sm text-muted-foreground mt-1">Networks</div>
+              </div>
+              <div>
+                <div className="text-2xl sm:text-3xl font-bold text-foreground">$20.4M</div>
+                <div className="text-sm text-muted-foreground mt-1">Total Staked</div>
+              </div>
+              <div>
+                <div className="text-2xl sm:text-3xl font-bold text-foreground">99.9%</div>
+                <div className="text-sm text-muted-foreground mt-1">Uptime</div>
+              </div>
+            </div>
           </div>
 
-          <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg">
-            <div>
-              <div className="text-2xl sm:text-3xl font-bold text-foreground">12</div>
-              <div className="text-sm text-muted-foreground mt-1">Networks</div>
+          {/* Floating glass panels */}
+          <div className="hidden lg:flex flex-col gap-4" aria-hidden="true">
+            <div className="self-end w-[330px] rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40 p-5">
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Networks</span>
+                <Layers className="w-3.5 h-3.5 text-accent" />
+              </div>
+              <div className="flex items-center -space-x-2 mb-3">
+                {heroChains.map((chain) => (
+                  <span
+                    key={chain.name}
+                    className="w-9 h-9 rounded-full bg-[#101420] border-2 border-background flex items-center justify-center overflow-hidden"
+                  >
+                    <Image src={chain.logo} alt={chain.name} width={22} height={22} className="w-[22px] h-[22px]" />
+                  </span>
+                ))}
+                <span className="w-9 h-9 rounded-full bg-accent/15 border-2 border-background flex items-center justify-center text-[10px] font-semibold text-accent">
+                  +7
+                </span>
+              </div>
+              <p className="text-sm text-foreground/90 font-medium">12 networks validated</p>
+              <p className="text-xs text-muted-foreground mt-0.5">mainnet & testnet, one standard of care</p>
             </div>
-            <div>
-              <div className="text-2xl sm:text-3xl font-bold text-foreground">$20.4M</div>
-              <div className="text-sm text-muted-foreground mt-1">Total Staked</div>
+
+            <div className="self-start w-[300px] rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40 p-5">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  Validator uptime
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-xs text-emerald-400">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  live
+                </span>
+              </div>
+              <div className="flex items-end gap-[3px] h-9 mb-3">
+                {uptimeBars.map((v, i) => (
+                  <span
+                    key={i}
+                    className="flex-1 rounded-[2px] bg-emerald-400/70"
+                    style={{ height: `${(v - 90) * 10}%` }}
+                  />
+                ))}
+              </div>
+              <p className="text-2xl font-bold text-foreground tracking-tight">99.9%</p>
+              <p className="text-xs text-muted-foreground mt-0.5">across all chains, all year</p>
             </div>
-            <div>
-              <div className="text-2xl sm:text-3xl font-bold text-foreground">99.9%</div>
-              <div className="text-sm text-muted-foreground mt-1">Uptime</div>
+
+            <div className="self-end w-[280px] rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40 p-5">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  Total staked
+                </span>
+                <Activity className="w-3.5 h-3.5 text-accent" />
+              </div>
+              <p className="text-2xl font-bold text-foreground tracking-tight">$20.4M</p>
+              <p className="text-xs text-muted-foreground mt-0.5">delegated by people who sleep well</p>
             </div>
           </div>
         </div>

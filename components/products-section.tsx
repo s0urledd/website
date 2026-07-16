@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Play, TriangleAlert, Check, Zap } from "lucide-react"
+import { ExternalLink, TriangleAlert, Check, Zap } from "lucide-react"
 
 function BrandVisual({ src, alt, position = "center" }: { src: string; alt: string; position?: string }) {
   return (
@@ -14,45 +14,6 @@ function BrandVisual({ src, alt, position = "center" }: { src: string; alt: stri
         style={{ objectPosition: position }}
         sizes="(max-width: 768px) 100vw, 33vw"
       />
-    </div>
-  )
-}
-
-function DiagonalStripes() {
-  return (
-    <div
-      className="absolute inset-0 pointer-events-none"
-      aria-hidden="true"
-      style={{
-        backgroundImage:
-          "repeating-linear-gradient(115deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 2px, transparent 2px, transparent 16px)",
-      }}
-    />
-  )
-}
-
-function WikiVisual() {
-  return (
-    <div className="relative h-44 overflow-hidden border-b border-white/5 bg-gradient-to-br from-fuchsia-600/[0.16] via-purple-700/[0.09] to-indigo-900/[0.05]">
-      <DiagonalStripes />
-      <div className="absolute inset-x-8 top-7 bottom-0 rounded-t-xl bg-[#0b0e15] border border-white/10 border-b-0 shadow-2xl shadow-black/60 p-3.5 flex gap-3 transition-transform duration-500 group-hover:-translate-y-1">
-        <div className="w-14 shrink-0 rounded-md bg-white/[0.04] border border-white/5 p-2 space-y-2">
-          <div className="h-1.5 w-9 rounded-full bg-fuchsia-400/70" />
-          <div className="h-1.5 w-7 rounded-full bg-white/10" />
-          <div className="h-1.5 w-8 rounded-full bg-white/10" />
-          <div className="h-1.5 w-6 rounded-full bg-white/10" />
-        </div>
-        <div className="flex-1">
-          <div className="h-2.5 w-28 rounded-full bg-white/25 mb-3" />
-          <div className="space-y-2">
-            <div className="h-1.5 w-full rounded-full bg-white/10" />
-            <div className="h-1.5 w-[85%] rounded-full bg-white/10" />
-            <div className="h-1.5 w-[92%] rounded-full bg-white/10" />
-            <div className="h-1.5 w-[70%] rounded-full bg-white/10" />
-          </div>
-          <div className="mt-3 h-6 w-24 rounded-md bg-fuchsia-500/20 border border-fuchsia-400/30" />
-        </div>
-      </div>
     </div>
   )
 }
@@ -77,57 +38,34 @@ function GuardVisual() {
   )
 }
 
-function TvVisual() {
+function EspressoDutyVisual() {
   return (
-    <div className="relative h-44 overflow-hidden border-b border-white/5 bg-gradient-to-br from-purple-600/[0.16] via-fuchsia-600/[0.09] to-pink-700/[0.05]">
-      <DiagonalStripes />
-      <div className="absolute inset-x-8 top-7 bottom-0 rounded-t-xl bg-[#0b0e15] border border-white/10 border-b-0 shadow-2xl shadow-black/60 flex flex-col transition-transform duration-500 group-hover:-translate-y-1">
-        <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-fuchsia-500/[0.08] to-transparent">
-          <div className="w-11 h-11 rounded-full bg-white/10 border border-white/20 backdrop-blur flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-            <Play className="w-4 h-4 text-white fill-white ml-0.5" />
-          </div>
-        </div>
-        <div className="px-3.5 py-2.5 flex items-center gap-2.5">
-          <div className="flex-1 h-1 rounded-full bg-white/10 overflow-hidden">
-            <div className="h-full w-[62%] rounded-full bg-fuchsia-400" />
-          </div>
-          <span className="text-[9px] font-mono text-muted-foreground">12:47</span>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function MonadoringVisual() {
-  return (
-    <div className="relative h-44 overflow-hidden border-b border-white/5 bg-gradient-to-br from-emerald-500/[0.09] via-transparent to-transparent">
-      <div className="absolute inset-x-8 top-1/2 -translate-y-1/2 rounded-xl bg-[#080a08] border border-white/10 shadow-2xl shadow-black/60 divide-y divide-white/5 transition-transform duration-500 group-hover:-translate-y-[53%]">
+    <div className="relative h-44 overflow-hidden border-b border-white/5 bg-gradient-to-br from-[#DE9E67]/[0.12] via-transparent to-transparent">
+      <div className="absolute inset-x-8 top-1/2 -translate-y-1/2 rounded-xl bg-[#0b0a08] border border-white/10 shadow-2xl shadow-black/60 divide-y divide-white/5 transition-transform duration-500 group-hover:-translate-y-[53%]">
         <div className="px-3.5 py-2.5">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-[9px] font-mono text-foreground/70">Monad Mainnet · (Huginn)</span>
-            <span className="flex items-center gap-1 text-[9px] font-mono text-emerald-400">
-              <span className="w-1 h-1 rounded-full bg-emerald-400" />
-              Finalized
+            <span className="text-[9px] font-mono text-foreground/70">espressoduty · :3030</span>
+            <span className="flex items-center gap-1 text-[9px] font-mono text-[#DE9E67]">
+              <span className="w-1 h-1 rounded-full bg-[#DE9E67]" />
+              leader slots
             </span>
           </div>
           <div className="flex gap-[3px]">
             {Array.from({ length: 22 }).map((_, i) => (
               <span
                 key={i}
-                className={`h-2 flex-1 rounded-[2px] ${
-                  i === 14 ? "bg-red-400/90" : i === 21 ? "bg-indigo-400/90" : "bg-emerald-400/80"
-                }`}
+                className={`h-2 flex-1 rounded-[2px] ${i === 16 ? "bg-red-400/90" : "bg-[#DE9E67]/80"}`}
               />
             ))}
           </div>
         </div>
         <div className="px-3.5 py-2 flex items-center gap-2 font-mono text-[10px]">
           <span className="w-1.5 h-1.5 rounded-full bg-red-400 shrink-0" />
-          <span className="text-red-400/90">missed block · paged on-call</span>
+          <span className="text-red-400/90">missed leader slot · alert sent</span>
         </div>
         <div className="px-3.5 py-2 flex items-center gap-2 font-mono text-[10px]">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
-          <span className="text-emerald-400/90">uptime (24h) 100.00% · 0 missed</span>
+          <span className="text-emerald-400/90">node healthy · synced</span>
         </div>
       </div>
     </div>
@@ -136,35 +74,71 @@ function MonadoringVisual() {
 
 function ApiVisual() {
   return (
-    <div className="relative h-48 overflow-hidden border-b border-white/5 bg-gradient-to-br from-accent/[0.08] via-transparent to-transparent">
-      <div className="absolute inset-x-8 top-6 bottom-0 rounded-t-xl bg-[#0b0e15] border border-white/10 border-b-0 shadow-2xl shadow-black/60 transition-transform duration-500 group-hover:-translate-y-1">
-        <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/5 font-mono text-[10px]">
+    <div className="relative h-60 overflow-hidden border-b border-white/5 bg-gradient-to-br from-accent/[0.07] via-transparent to-transparent">
+      <div
+        className="absolute inset-x-0 top-0 h-32 pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(56,189,248,0.30) 1px, transparent 1px), radial-gradient(rgba(99,102,241,0.22) 1px, transparent 1px)",
+          backgroundSize: "10px 10px, 16px 16px",
+          backgroundPosition: "0 0, 5px 8px",
+          maskImage: "linear-gradient(180deg, black 20%, transparent)",
+          WebkitMaskImage: "linear-gradient(180deg, black 20%, transparent)",
+        }}
+      />
+
+      <div className="absolute top-10 left-12 -right-16 -bottom-6 rounded-tl-2xl bg-[#0d1117] border border-white/10 shadow-[0_28px_70px_-16px_rgba(0,0,0,0.9)] transition-transform duration-500 group-hover:-translate-y-1.5">
+        <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/[0.07] font-mono text-[10px]">
+          <span className="flex gap-1.5 mr-1">
+            <span className="w-2 h-2 rounded-full bg-[#ff5f57]/70" />
+            <span className="w-2 h-2 rounded-full bg-[#febc2e]/70" />
+            <span className="w-2 h-2 rounded-full bg-[#28c840]/70" />
+          </span>
           <span className="text-[9px] font-semibold text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 rounded px-1.5 py-0.5">
             GET
           </span>
           <span className="text-muted-foreground">/monad-api/staking/pool</span>
-          <span className="ml-auto text-emerald-400/80">200</span>
+          <span className="text-emerald-400/80 ml-3">200 OK</span>
         </div>
-        <div className="px-4 py-3 font-mono text-[10.5px] leading-relaxed">
-          <div className="text-muted-foreground">{"{"}</div>
-          <div className="pl-4">
-            <span className="text-sky-300">"apr"</span>
-            <span className="text-muted-foreground">: </span>
-            <span className="text-amber-300">13.09</span>
-            <span className="text-muted-foreground">,</span>
+        <div className="flex font-mono text-[10.5px] leading-[1.9]">
+          <div className="px-3 py-2.5 text-right text-muted-foreground/40 select-none border-r border-white/[0.05]">
+            {[1, 2, 3, 4, 5, 6, 7].map((n) => (
+              <div key={n}>{n}</div>
+            ))}
           </div>
-          <div className="pl-4">
-            <span className="text-sky-300">"active_validators"</span>
-            <span className="text-muted-foreground">: </span>
-            <span className="text-amber-300">198</span>
-            <span className="text-muted-foreground">,</span>
+          <div className="px-4 py-2.5">
+            <div className="text-muted-foreground">{"{"}</div>
+            <div className="pl-4">
+              <span className="text-sky-300">"success"</span>
+              <span className="text-muted-foreground">: </span>
+              <span className="text-violet-300">true</span>
+              <span className="text-muted-foreground">,</span>
+            </div>
+            <div className="pl-4">
+              <span className="text-sky-300">"total_staked"</span>
+              <span className="text-muted-foreground">: </span>
+              <span className="text-amber-300">15073654424.53</span>
+              <span className="text-muted-foreground">,</span>
+            </div>
+            <div className="pl-4">
+              <span className="text-sky-300">"apr"</span>
+              <span className="text-muted-foreground">: </span>
+              <span className="text-amber-300">13.09</span>
+              <span className="text-muted-foreground">,</span>
+            </div>
+            <div className="pl-4">
+              <span className="text-sky-300">"active_validators"</span>
+              <span className="text-muted-foreground">: </span>
+              <span className="text-amber-300">198</span>
+              <span className="text-muted-foreground">,</span>
+            </div>
+            <div className="pl-4">
+              <span className="text-sky-300">"epoch"</span>
+              <span className="text-muted-foreground">: </span>
+              <span className="text-amber-300">1711</span>
+            </div>
+            <div className="text-muted-foreground">{"}"}</div>
           </div>
-          <div className="pl-4">
-            <span className="text-sky-300">"epoch"</span>
-            <span className="text-muted-foreground">: </span>
-            <span className="text-amber-300">1711</span>
-          </div>
-          <div className="text-muted-foreground">{"}"}</div>
         </div>
       </div>
     </div>
@@ -172,32 +146,68 @@ function ApiVisual() {
 }
 
 function RpcVisual() {
-  const bars = [
-    100, 100, 100, 100, 98, 100, 100, 100, 100, 100, 100, 96, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 99,
-    100, 100, 100, 100, 100, 100, 100,
-  ]
   return (
-    <div className="relative h-48 overflow-hidden border-b border-white/5 bg-gradient-to-br from-emerald-500/[0.06] via-transparent to-transparent">
-      <div className="absolute inset-x-8 top-6 bottom-0 rounded-t-xl bg-[#0b0e15] border border-white/10 border-b-0 shadow-2xl shadow-black/60 p-4 space-y-4 transition-transform duration-500 group-hover:-translate-y-1">
-        {["rpc.monad.huginn.tech", "wss.monad.huginn.tech"].map((endpoint) => (
-          <div key={endpoint}>
-            <div className="flex items-center justify-between mb-1.5">
-              <span className="font-mono text-[10px] text-foreground/80">{endpoint}</span>
-              <span className="flex items-center gap-1.5 text-[10px] text-emerald-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                Operational
-              </span>
-            </div>
-            <div className="flex gap-[3px]">
-              {bars.map((v, i) => (
-                <span
-                  key={i}
-                  className={`h-3.5 flex-1 rounded-[2px] ${v === 100 ? "bg-emerald-400/70" : "bg-amber-400/70"}`}
-                />
-              ))}
+    <div className="relative h-60 overflow-hidden border-b border-white/5">
+      <div
+        className="absolute inset-x-0 top-0 h-36 pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(52,211,153,0.32) 1px, transparent 1px), radial-gradient(rgba(56,189,248,0.20) 1px, transparent 1px)",
+          backgroundSize: "10px 10px, 16px 16px",
+          backgroundPosition: "0 0, 5px 8px",
+          maskImage: "linear-gradient(180deg, black 25%, transparent)",
+          WebkitMaskImage: "linear-gradient(180deg, black 25%, transparent)",
+        }}
+      />
+      <div className="absolute -top-10 right-10 w-56 h-56 rounded-full bg-emerald-500/[0.05] blur-3xl pointer-events-none" />
+
+      <div className="absolute left-1/2 -translate-x-1/2 top-12 w-[300px] rounded-2xl bg-[#0d1117]/95 backdrop-blur border border-white/10 shadow-[0_28px_70px_-16px_rgba(0,0,0,0.9)] transition-transform duration-500 group-hover:-translate-y-1.5">
+        <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/[0.07]">
+          <span className="text-[11px] font-medium text-foreground/85">Huginn Monad RPC</span>
+          <span className="text-muted-foreground/50 text-xs leading-none">×</span>
+        </div>
+        <div className="px-5 pt-4 pb-4">
+          <div className="relative w-44 mx-auto">
+            <svg viewBox="0 0 120 64" className="w-full">
+              <path
+                d="M10 58 A50 50 0 0 1 110 58"
+                fill="none"
+                stroke="rgba(255,255,255,0.08)"
+                strokeWidth="9"
+                strokeLinecap="round"
+              />
+              <path
+                d="M10 58 A50 50 0 0 1 104 33"
+                fill="none"
+                stroke="url(#rpcGauge)"
+                strokeWidth="9"
+                strokeLinecap="round"
+              />
+              <defs>
+                <linearGradient id="rpcGauge" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#34d399" stopOpacity="0.35" />
+                  <stop offset="100%" stopColor="#34d399" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div className="absolute inset-x-0 bottom-0 text-center">
+              <div className="text-xl font-bold text-foreground tracking-tight leading-none">99.98%</div>
+              <div className="text-[9px] font-mono uppercase tracking-wider text-muted-foreground mt-1">
+                uptime · 30 days
+              </div>
             </div>
           </div>
-        ))}
+          <div className="flex items-center justify-center gap-4 mt-4 pt-3 border-t border-white/[0.06] font-mono text-[10px]">
+            <span className="flex items-center gap-1.5 text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              rpc · operational
+            </span>
+            <span className="flex items-center gap-1.5 text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              wss · operational
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   )
@@ -210,7 +220,7 @@ const products = [
     description: "Network docs, guides, and handbooks for the whole Cosmos ecosystem, all in one place.",
     cta: "Visit Cosmos.Wiki",
     link: "https://cosmos.wiki",
-    visual: WikiVisual,
+    visual: () => <BrandVisual src="/images/cosmoswiki.jpg" alt="Cosmos.Wiki" />,
   },
   {
     name: "Huginn Guard",
@@ -227,7 +237,7 @@ const products = [
     description: "Tutorials, interviews, and ecosystem coverage from a team that runs validators every day.",
     cta: "Watch Huginn TV",
     link: "https://huginn.tv",
-    visual: TvVisual,
+    visual: () => <BrandVisual src="/images/huginntv.jpg" alt="Huginn TV" position="32% center" />,
   },
   {
     name: "Monval",
@@ -235,7 +245,7 @@ const products = [
     description: "Everything a Monad validator needs: snapshots, forkpoints, RPC lists, and battle-tested CLI recipes.",
     cta: "Open Monval",
     link: "https://monval.huginn.tech",
-    visual: () => <BrandVisual src="/images/products/monval.png" alt="Monval" />,
+    visual: () => <BrandVisual src="/images/monval.png" alt="Monval" position="left center" />,
   },
   {
     name: "Monadoring",
@@ -243,7 +253,16 @@ const products = [
     description: "Open-source watchdog for Monad validators. Skipped blocks and chain halts go straight to your pager.",
     cta: "View on GitHub",
     link: "https://github.com/Huginn-Tech/monadoring",
-    visual: MonadoringVisual,
+    visual: () => <BrandVisual src="/images/monadoring.png" alt="Monadoring" position="top" />,
+  },
+  {
+    name: "EspressoDuty",
+    tagline: "Monitoring",
+    description:
+      "Uptime monitoring and alerting for Espresso validators. Missed leader slots and node health, pushed to Telegram, Discord, Slack, or PagerDuty.",
+    cta: "View on GitHub",
+    link: "https://github.com/s0urledd/espressoduty",
+    visual: EspressoDutyVisual,
   },
 ]
 
@@ -287,12 +306,10 @@ export function ProductsSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 max-w-7xl mx-auto">
-          {products.map((product, index) => (
+          {products.map((product) => (
             <Card
               key={product.name}
-              className={`group relative overflow-hidden p-0 gap-0 bg-card/60 backdrop-blur-sm border-border hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1 transition-all duration-500 flex flex-col lg:col-span-2 ${
-                index === 3 ? "lg:col-start-2" : ""
-              }`}
+              className="group relative overflow-hidden p-0 gap-0 bg-card/60 backdrop-blur-sm border-border hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1 transition-all duration-500 flex flex-col lg:col-span-2"
             >
               <product.visual />
 
