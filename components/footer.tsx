@@ -102,6 +102,16 @@ export function Footer() {
                   Monad RPC & WSS
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://github.com/s0urledd/espressoduty"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  EspressoDuty
+                </a>
+              </li>
             </ul>
           </div>
 

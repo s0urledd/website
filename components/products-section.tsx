@@ -38,6 +38,40 @@ function GuardVisual() {
   )
 }
 
+function EspressoDutyVisual() {
+  return (
+    <div className="relative h-44 overflow-hidden border-b border-white/5 bg-gradient-to-br from-[#DE9E67]/[0.12] via-transparent to-transparent">
+      <div className="absolute inset-x-8 top-1/2 -translate-y-1/2 rounded-xl bg-[#0b0a08] border border-white/10 shadow-2xl shadow-black/60 divide-y divide-white/5 transition-transform duration-500 group-hover:-translate-y-[53%]">
+        <div className="px-3.5 py-2.5">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-[9px] font-mono text-foreground/70">espressoduty · :3030</span>
+            <span className="flex items-center gap-1 text-[9px] font-mono text-[#DE9E67]">
+              <span className="w-1 h-1 rounded-full bg-[#DE9E67]" />
+              leader slots
+            </span>
+          </div>
+          <div className="flex gap-[3px]">
+            {Array.from({ length: 22 }).map((_, i) => (
+              <span
+                key={i}
+                className={`h-2 flex-1 rounded-[2px] ${i === 16 ? "bg-red-400/90" : "bg-[#DE9E67]/80"}`}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="px-3.5 py-2 flex items-center gap-2 font-mono text-[10px]">
+          <span className="w-1.5 h-1.5 rounded-full bg-red-400 shrink-0" />
+          <span className="text-red-400/90">missed leader slot · alert sent</span>
+        </div>
+        <div className="px-3.5 py-2 flex items-center gap-2 font-mono text-[10px]">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+          <span className="text-emerald-400/90">node healthy · synced</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function ApiVisual() {
   return (
     <div className="relative h-48 overflow-hidden border-b border-white/5 bg-gradient-to-br from-accent/[0.08] via-transparent to-transparent">
@@ -149,6 +183,15 @@ const products = [
     link: "https://github.com/Huginn-Tech/monadoring",
     visual: () => <BrandVisual src="/images/monadoring.png" alt="Monadoring" position="top" />,
   },
+  {
+    name: "EspressoDuty",
+    tagline: "Monitoring",
+    description:
+      "Uptime monitoring and alerting for Espresso validators. Missed leader slots and node health, pushed to Telegram, Discord, Slack, or PagerDuty.",
+    cta: "View on GitHub",
+    link: "https://github.com/s0urledd/espressoduty",
+    visual: EspressoDutyVisual,
+  },
 ]
 
 const infra = [
@@ -191,12 +234,10 @@ export function ProductsSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 max-w-7xl mx-auto">
-          {products.map((product, index) => (
+          {products.map((product) => (
             <Card
               key={product.name}
-              className={`group relative overflow-hidden p-0 gap-0 bg-card/60 backdrop-blur-sm border-border hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1 transition-all duration-500 flex flex-col lg:col-span-2 ${
-                index === 3 ? "lg:col-start-2" : ""
-              }`}
+              className="group relative overflow-hidden p-0 gap-0 bg-card/60 backdrop-blur-sm border-border hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1 transition-all duration-500 flex flex-col lg:col-span-2"
             >
               <product.visual />
 
