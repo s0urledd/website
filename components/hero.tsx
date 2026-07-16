@@ -35,16 +35,18 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-16 items-center">
           <div className="max-w-3xl">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 text-balance leading-[1.08] tracking-tight">
-              Professional validators,
+              Trusted infrastructure,
               <br />
               <span className="bg-gradient-to-r from-accent via-accent to-sky-400 bg-clip-text text-transparent">
-                proven infrastructure.
+                reliable validator
               </span>
+              <br />
+              across chains.
             </h1>
 
             <p className="text-xl sm:text-2xl text-muted-foreground mb-12 text-balance max-w-2xl leading-relaxed font-light">
-              Five years of Proof-of-Stake operations. Genesis validator on Monad and Initia, mainnet validator on
-              Starknet, 100+ nodes launched, and foundation delegations earned across the networks we run.
+              Practical solutions for a decentralized future. We deliver reliable tools, services, and expertise to
+              support blockchain ecosystems.
             </p>
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
@@ -85,8 +87,8 @@ export function Hero() {
           </div>
 
           {/* Floating glass panels */}
-          <div className="relative hidden lg:block h-[440px]" aria-hidden="true">
-            <div className="absolute top-0 right-0 w-[330px] rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40 p-5">
+          <div className="hidden lg:flex flex-col gap-4" aria-hidden="true">
+            <div className="self-end w-[330px] rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40 p-5">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Networks</span>
                 <Layers className="w-3.5 h-3.5 text-accent" />
@@ -108,7 +110,7 @@ export function Hero() {
               <p className="text-xs text-muted-foreground mt-0.5">mainnet & testnet, one standard of care</p>
             </div>
 
-            <div className="absolute top-[168px] left-0 w-[300px] rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40 p-5">
+            <div className="self-start w-[300px] rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40 p-5">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                   Validator uptime
@@ -131,7 +133,7 @@ export function Hero() {
               <p className="text-xs text-muted-foreground mt-0.5">across all chains, all year</p>
             </div>
 
-            <div className="absolute bottom-0 right-0 w-[280px] rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40 p-5">
+            <div className="self-end w-[280px] rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40 p-5">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                   Total staked
