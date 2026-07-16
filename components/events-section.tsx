@@ -67,7 +67,7 @@ export function EventsSection() {
   }
 
   return (
-    <section id="events" className="py-24 lg:py-32 relative">
+    <section id="events" className="py-24 lg:py-32 relative bg-white/[0.015]">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/[0.03] to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-6 lg:px-8 relative">

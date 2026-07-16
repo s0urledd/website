@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Play, TriangleAlert, Check, Zap } from "lucide-react"
+import { ExternalLink, TriangleAlert, Check, Zap } from "lucide-react"
 
 function BrandVisual({ src, alt, position = "center" }: { src: string; alt: string; position?: string }) {
   return (
@@ -14,45 +14,6 @@ function BrandVisual({ src, alt, position = "center" }: { src: string; alt: stri
         style={{ objectPosition: position }}
         sizes="(max-width: 768px) 100vw, 33vw"
       />
-    </div>
-  )
-}
-
-function DiagonalStripes() {
-  return (
-    <div
-      className="absolute inset-0 pointer-events-none"
-      aria-hidden="true"
-      style={{
-        backgroundImage:
-          "repeating-linear-gradient(115deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 2px, transparent 2px, transparent 16px)",
-      }}
-    />
-  )
-}
-
-function WikiVisual() {
-  return (
-    <div className="relative h-44 overflow-hidden border-b border-white/5 bg-gradient-to-br from-fuchsia-600/[0.16] via-purple-700/[0.09] to-indigo-900/[0.05]">
-      <DiagonalStripes />
-      <div className="absolute inset-x-8 top-7 bottom-0 rounded-t-xl bg-[#0b0e15] border border-white/10 border-b-0 shadow-2xl shadow-black/60 p-3.5 flex gap-3 transition-transform duration-500 group-hover:-translate-y-1">
-        <div className="w-14 shrink-0 rounded-md bg-white/[0.04] border border-white/5 p-2 space-y-2">
-          <div className="h-1.5 w-9 rounded-full bg-fuchsia-400/70" />
-          <div className="h-1.5 w-7 rounded-full bg-white/10" />
-          <div className="h-1.5 w-8 rounded-full bg-white/10" />
-          <div className="h-1.5 w-6 rounded-full bg-white/10" />
-        </div>
-        <div className="flex-1">
-          <div className="h-2.5 w-28 rounded-full bg-white/25 mb-3" />
-          <div className="space-y-2">
-            <div className="h-1.5 w-full rounded-full bg-white/10" />
-            <div className="h-1.5 w-[85%] rounded-full bg-white/10" />
-            <div className="h-1.5 w-[92%] rounded-full bg-white/10" />
-            <div className="h-1.5 w-[70%] rounded-full bg-white/10" />
-          </div>
-          <div className="mt-3 h-6 w-24 rounded-md bg-fuchsia-500/20 border border-fuchsia-400/30" />
-        </div>
-      </div>
     </div>
   )
 }
@@ -71,63 +32,6 @@ function GuardVisual() {
         <div className="rounded-xl rounded-tl-sm bg-[#0b0e15] border border-white/10 px-3.5 py-2 shadow-xl shadow-black/50 max-w-[64%] flex items-center gap-1.5">
           <Check className="w-3 h-3 text-emerald-400" />
           <span className="text-[10px] font-mono text-emerald-400/90">delivered · 0.4s</span>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function TvVisual() {
-  return (
-    <div className="relative h-44 overflow-hidden border-b border-white/5 bg-gradient-to-br from-purple-600/[0.16] via-fuchsia-600/[0.09] to-pink-700/[0.05]">
-      <DiagonalStripes />
-      <div className="absolute inset-x-8 top-7 bottom-0 rounded-t-xl bg-[#0b0e15] border border-white/10 border-b-0 shadow-2xl shadow-black/60 flex flex-col transition-transform duration-500 group-hover:-translate-y-1">
-        <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-fuchsia-500/[0.08] to-transparent">
-          <div className="w-11 h-11 rounded-full bg-white/10 border border-white/20 backdrop-blur flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-            <Play className="w-4 h-4 text-white fill-white ml-0.5" />
-          </div>
-        </div>
-        <div className="px-3.5 py-2.5 flex items-center gap-2.5">
-          <div className="flex-1 h-1 rounded-full bg-white/10 overflow-hidden">
-            <div className="h-full w-[62%] rounded-full bg-fuchsia-400" />
-          </div>
-          <span className="text-[9px] font-mono text-muted-foreground">12:47</span>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function MonadoringVisual() {
-  return (
-    <div className="relative h-44 overflow-hidden border-b border-white/5 bg-gradient-to-br from-emerald-500/[0.09] via-transparent to-transparent">
-      <div className="absolute inset-x-8 top-1/2 -translate-y-1/2 rounded-xl bg-[#080a08] border border-white/10 shadow-2xl shadow-black/60 divide-y divide-white/5 transition-transform duration-500 group-hover:-translate-y-[53%]">
-        <div className="px-3.5 py-2.5">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-[9px] font-mono text-foreground/70">Monad Mainnet · (Huginn)</span>
-            <span className="flex items-center gap-1 text-[9px] font-mono text-emerald-400">
-              <span className="w-1 h-1 rounded-full bg-emerald-400" />
-              Finalized
-            </span>
-          </div>
-          <div className="flex gap-[3px]">
-            {Array.from({ length: 22 }).map((_, i) => (
-              <span
-                key={i}
-                className={`h-2 flex-1 rounded-[2px] ${
-                  i === 14 ? "bg-red-400/90" : i === 21 ? "bg-indigo-400/90" : "bg-emerald-400/80"
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-        <div className="px-3.5 py-2 flex items-center gap-2 font-mono text-[10px]">
-          <span className="w-1.5 h-1.5 rounded-full bg-red-400 shrink-0" />
-          <span className="text-red-400/90">missed block · paged on-call</span>
-        </div>
-        <div className="px-3.5 py-2 flex items-center gap-2 font-mono text-[10px]">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
-          <span className="text-emerald-400/90">uptime (24h) 100.00% · 0 missed</span>
         </div>
       </div>
     </div>
@@ -210,7 +114,7 @@ const products = [
     description: "Network docs, guides, and handbooks for the whole Cosmos ecosystem, all in one place.",
     cta: "Visit Cosmos.Wiki",
     link: "https://cosmos.wiki",
-    visual: WikiVisual,
+    visual: () => <BrandVisual src="/images/cosmoswiki.jpg" alt="Cosmos.Wiki" />,
   },
   {
     name: "Huginn Guard",
@@ -227,7 +131,7 @@ const products = [
     description: "Tutorials, interviews, and ecosystem coverage from a team that runs validators every day.",
     cta: "Watch Huginn TV",
     link: "https://huginn.tv",
-    visual: TvVisual,
+    visual: () => <BrandVisual src="/images/huginntv.jpg" alt="Huginn TV" position="32% center" />,
   },
   {
     name: "Monval",
@@ -235,7 +139,7 @@ const products = [
     description: "Everything a Monad validator needs: snapshots, forkpoints, RPC lists, and battle-tested CLI recipes.",
     cta: "Open Monval",
     link: "https://monval.huginn.tech",
-    visual: () => <BrandVisual src="/images/products/monval.png" alt="Monval" />,
+    visual: () => <BrandVisual src="/images/monval.png" alt="Monval" position="left center" />,
   },
   {
     name: "Monadoring",
@@ -243,7 +147,7 @@ const products = [
     description: "Open-source watchdog for Monad validators. Skipped blocks and chain halts go straight to your pager.",
     cta: "View on GitHub",
     link: "https://github.com/Huginn-Tech/monadoring",
-    visual: MonadoringVisual,
+    visual: () => <BrandVisual src="/images/monadoring.png" alt="Monadoring" position="top" />,
   },
 ]
 

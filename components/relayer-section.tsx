@@ -23,8 +23,14 @@ const highlights = [
 
 export function RelayerSection() {
   return (
-    <section id="relayer" className="py-24 lg:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/[0.04] to-transparent pointer-events-none" />
+    <section
+      id="relayer"
+      className="py-24 lg:py-32 relative overflow-hidden border-y border-white/[0.06]"
+      style={{
+        background:
+          "radial-gradient(ellipse at 80% 0%, rgba(14,116,144,0.14), transparent 52%), radial-gradient(ellipse at 10% 100%, rgba(59,130,246,0.10), transparent 52%), linear-gradient(180deg, #0a1220 0%, #0b1526 100%)",
+      }}
+    >
 
       <div className="container mx-auto px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center max-w-6xl mx-auto">
