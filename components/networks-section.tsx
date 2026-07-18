@@ -88,6 +88,9 @@ const networks = [
     chain: "Testnet",
     apr: "0",
     logo: "/logos/cosmoshub.png",
+    stakeUrl:
+      "https://www.mintscan.io/ics-testnet-provider/validators/cosmosvaloper1v89yxr0dn4kdgg4e8f9zmlnmykmvaruj5e00wa",
+    linkLabel: "View Validator",
   },
   {
     name: "Monad",
@@ -95,6 +98,8 @@ const networks = [
     chain: "Testnet",
     apr: "0",
     logo: "/logos/monad.png",
+    stakeUrl: "https://testnet.monadvision.com/validator/0xA66C9C453165BA5E120fc864e5C9d98b471ad88B",
+    linkLabel: "View Validator",
   },
   {
     name: "Canton",
