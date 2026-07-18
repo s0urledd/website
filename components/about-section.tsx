@@ -41,7 +41,7 @@ export function AboutSection() {
     <section id="about" className="py-24 lg:py-32 relative">
       <div className="container mx-auto px-6 lg:px-8 relative">
         <div className="max-w-6xl mx-auto">
-          <div className="max-w-2xl mb-20">
+          <div className="max-w-2xl mx-auto text-center mb-20">
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
               Why Huginn
             </span>
@@ -106,9 +106,9 @@ export function AboutSection() {
           </div>
 
           {/* Hairline stats row */}
-          <div className="mt-20 pt-8 border-t border-white/[0.08] flex flex-wrap gap-x-14 gap-y-6">
+          <div className="mt-20 pt-8 border-t border-white/[0.08] flex flex-wrap justify-center gap-x-14 gap-y-6">
             {stats.map((s) => (
-              <div key={s.label}>
+              <div key={s.label} className="text-center">
                 <div className="text-3xl font-bold text-foreground tracking-tight">{s.value}</div>
                 <div className="text-[13px] text-muted-foreground mt-1.5">{s.label}</div>
               </div>
