@@ -1,78 +1,62 @@
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { ArrowUpRight } from "lucide-react"
 
 interface NetworkCardProps {
   name: string
+  ticker: string
   chain: string
   apr: string
   logo: string
-  accentColor?: string
   stakeUrl?: string
   linkLabel?: string
 }
 
-export function NetworkCard({ name, chain, apr, logo, accentColor, stakeUrl, linkLabel }: NetworkCardProps) {
-  return (
-    <Card className="group relative overflow-hidden border border-border bg-card/50 backdrop-blur-sm hover:shadow-xl hover:shadow-accent/10 transition-all duration-500 hover:border-accent/50 hover:-translate-y-1">
-      <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        style={{
-          background: `radial-gradient(circle at top right, ${accentColor || "rgba(59, 130, 246, 0.1)"}, transparent 70%)`,
-        }}
-      />
-
-      <div className="p-6 relative z-10">
-        <div className="flex items-start justify-between mb-6">
-          <div className="flex items-center gap-3">
-            <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center overflow-hidden backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-accent/20">
-              <Image src={logo || "/placeholder.svg"} alt={name} width={36} height={36} className="w-9 h-9" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-base text-foreground group-hover:text-accent transition-colors">
-                {name}
-              </h3>
-              <Badge variant="secondary" className="mt-1 text-xs font-normal">
-                {chain}
-              </Badge>
-            </div>
-          </div>
-        </div>
-
-        <div className="mb-6">
-          <div className="text-lg font-bold text-foreground mb-1 group-hover:text-accent transition-colors">
-            {apr === "0" ? "—" : `${apr}%`}
-          </div>
-          <p className="text-[10px] text-muted-foreground uppercase tracking-wider">APR</p>
-        </div>
-
-        {stakeUrl ? (
-          <Button className="w-full group/btn text-sm font-medium bg-transparent" variant="outline" size="sm" asChild>
-            <a
-              href={stakeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${linkLabel || "Stake"} ${name} on ${chain}`}
-            >
-              {linkLabel || "Stake Now"}
-              <ArrowUpRight className="ml-2 w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-            </a>
-          </Button>
-        ) : (
-          <Button
-            className="w-full group/btn text-sm font-medium bg-transparent"
-            variant="outline"
-            size="sm"
-            disabled
-            aria-label={`Staking for ${name} coming soon`}
-          >
-            Coming Soon
-            <ArrowUpRight className="ml-2 w-3.5 h-3.5 opacity-50" />
-          </Button>
-        )}
+export function NetworkCard({ name, ticker, chain, apr, logo, stakeUrl, linkLabel }: NetworkCardProps) {
+  const content = (
+    <>
+      <div className="flex items-start justify-between mb-8">
+        <span className="w-11 h-11 rounded-lg bg-[#0d1119] border border-white/10 flex items-center justify-center overflow-hidden">
+          <Image src={logo || "/placeholder.svg"} alt={name} width={26} height={26} className="w-[26px] h-[26px]" />
+        </span>
+        <ArrowUpRight
+          className={`w-4 h-4 mt-0.5 transition-all ${
+            stakeUrl
+              ? "text-muted-foreground/40 group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              : "text-muted-foreground/20"
+          }`}
+        />
       </div>
-    </Card>
+
+      <div className="font-semibold text-[15px] text-foreground tracking-tight">{name}</div>
+      <div className="text-[11px] font-mono text-muted-foreground mt-0.5 mb-5">{ticker}</div>
+
+      <div className="flex items-baseline justify-between border-t border-white/[0.06] pt-4">
+        <span className="text-[10px] font-mono uppercase tracking-[0.15em] text-muted-foreground">
+          {apr === "0" ? (stakeUrl ? linkLabel || "Explorer" : "Coming soon") : "Est. APR"}
+        </span>
+        <span className="font-mono text-lg text-foreground tabular-nums tracking-tight">
+          {apr === "0" ? "—" : `${apr}%`}
+        </span>
+      </div>
+    </>
+  )
+
+  const cardClass =
+    "group relative rounded-xl border border-white/[0.07] bg-white/[0.02] p-5 transition-all duration-300"
+
+  if (!stakeUrl) {
+    return <div className={`${cardClass} opacity-60`}>{content}</div>
+  }
+
+  return (
+    <a
+      href={stakeUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${linkLabel || "Stake"} ${name} on ${chain}`}
+      className={`${cardClass} hover:border-white/20 hover:bg-white/[0.04] hover:-translate-y-0.5`}
+    >
+      {content}
+    </a>
   )
 }

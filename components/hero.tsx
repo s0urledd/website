@@ -49,21 +49,21 @@ export function Hero() {
               support blockchain ecosystems.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-start gap-4">
+            <div className="flex flex-col sm:flex-row items-start gap-3">
               <Button
                 size="lg"
-                className="w-full sm:w-auto px-8 h-14 text-base font-medium rounded-xl bg-gradient-to-r from-accent via-accent to-accent/90 hover:from-accent hover:via-accent/95 hover:to-accent/80 shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/40 transition-all duration-300 hover:scale-[1.02] border border-accent/20"
+                className="group w-full sm:w-auto px-7 h-12 text-[15px] font-medium rounded-lg bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/20 transition-colors"
                 asChild
               >
                 <Link href="#networks">
                   Stake with Us
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto px-8 h-14 text-base font-medium rounded-xl bg-white/5 backdrop-blur-sm border-white/20 hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
+                className="w-full sm:w-auto px-7 h-12 text-[15px] font-medium rounded-lg bg-transparent border-white/15 hover:bg-white/[0.04] hover:border-white/30 transition-colors"
                 asChild
               >
                 <Link href="#contact">Get in Touch</Link>
@@ -86,13 +86,13 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Floating glass panels */}
-          <div className="hidden lg:flex flex-col gap-4" aria-hidden="true">
-            <div className="self-end w-[330px] rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40 p-5">
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Networks</span>
+          {/* Floating panels */}
+          <div className="hidden lg:flex flex-col gap-3" aria-hidden="true">
+            <div className="self-end w-[330px] rounded-xl bg-[#0b0e16]/80 backdrop-blur-md border border-white/[0.08] p-5">
+              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground mb-4">
+                Networks
               </div>
-              <div className="flex items-center -space-x-2 mb-3">
+              <div className="flex items-center -space-x-2 mb-4">
                 {heroChains.map((chain) => (
                   <span
                     key={chain.name}
@@ -105,41 +105,43 @@ export function Hero() {
                   +7
                 </span>
               </div>
-              <p className="text-sm text-foreground/90 font-medium">12 networks validated</p>
-              <p className="text-xs text-muted-foreground mt-0.5">mainnet & testnet, one standard of care</p>
+              <div className="border-t border-white/[0.06] pt-3">
+                <p className="text-sm text-foreground font-medium tracking-tight">12 networks validated</p>
+                <p className="text-xs text-muted-foreground mt-0.5">mainnet & testnet, one standard of care</p>
+              </div>
             </div>
 
-            <div className="self-start w-[300px] rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40 p-5">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+            <div className="self-start w-[300px] rounded-xl bg-[#0b0e16]/80 backdrop-blur-md border border-white/[0.08] p-5">
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground">
                   Validator uptime
                 </span>
-                <span className="inline-flex items-center gap-1.5 text-xs text-emerald-400">
+                <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-emerald-400">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                   live
                 </span>
               </div>
-              <div className="flex items-end gap-[3px] h-9 mb-3">
+              <div className="flex items-end gap-[3px] h-9 mb-4">
                 {uptimeBars.map((v, i) => (
                   <span
                     key={i}
-                    className="flex-1 rounded-[2px] bg-emerald-400/70"
+                    className="flex-1 rounded-[2px] bg-emerald-400/60"
                     style={{ height: `${(v - 90) * 10}%` }}
                   />
                 ))}
               </div>
-              <p className="text-2xl font-bold text-foreground tracking-tight">99.9%</p>
-              <p className="text-xs text-muted-foreground mt-0.5">across all chains, all year</p>
+              <div className="border-t border-white/[0.06] pt-3 flex items-baseline justify-between">
+                <p className="text-2xl font-bold text-foreground tracking-tight tabular-nums">99.9%</p>
+                <p className="text-xs text-muted-foreground">across all chains, all year</p>
+              </div>
             </div>
 
-            <div className="self-end w-[280px] rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40 p-5">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-                  Total staked
-                </span>
+            <div className="self-end w-[300px] rounded-xl bg-[#0b0e16]/80 backdrop-blur-md border border-white/[0.08] p-5">
+              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground mb-3">
+                Total staked
               </div>
-              <p className="text-2xl font-bold text-foreground tracking-tight">$20.4M</p>
-              <p className="text-xs text-muted-foreground mt-0.5">delegated by 10k+ people who sleep well</p>
+              <p className="text-2xl font-bold text-foreground tracking-tight tabular-nums">$20.4M</p>
+              <p className="text-xs text-muted-foreground mt-1">delegated by 10k+ people who sleep well</p>
             </div>
           </div>
         </div>
