@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Activity, Layers } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 const heroChains = [
   { name: "Monad", logo: "/logos/monad.png" },
@@ -90,8 +90,7 @@ export function Hero() {
           <div className="hidden lg:flex flex-col gap-4" aria-hidden="true">
             <div className="self-end w-[330px] rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40 p-5">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Networks</span>
-                <Layers className="w-3.5 h-3.5 text-accent" />
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Networks</span>
               </div>
               <div className="flex items-center -space-x-2 mb-3">
                 {heroChains.map((chain) => (
@@ -112,7 +111,7 @@ export function Hero() {
 
             <div className="self-start w-[300px] rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40 p-5">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                   Validator uptime
                 </span>
                 <span className="inline-flex items-center gap-1.5 text-xs text-emerald-400">
@@ -135,13 +134,12 @@ export function Hero() {
 
             <div className="self-end w-[280px] rounded-2xl bg-white/[0.05] backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40 p-5">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                   Total staked
                 </span>
-                <Activity className="w-3.5 h-3.5 text-accent" />
               </div>
               <p className="text-2xl font-bold text-foreground tracking-tight">$20.4M</p>
-              <p className="text-xs text-muted-foreground mt-0.5">delegated by people who sleep well</p>
+              <p className="text-xs text-muted-foreground mt-0.5">delegated by 10k+ people who sleep well</p>
             </div>
           </div>
         </div>
